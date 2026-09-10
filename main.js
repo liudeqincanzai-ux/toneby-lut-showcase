@@ -5,8 +5,15 @@
   var picker = document.getElementById("groupPicker");
   var page = document.getElementById("page");
 
+  // 数据来源：编辑器保存过的本地版本优先，否则用 data.js 默认
+  var DATA;
+  try {
+    var saved = JSON.parse(localStorage.getItem("lut_site_edits_v1"));
+    DATA = (saved && saved.groups && saved.groups.length) ? saved.groups : GROUPS;
+  } catch (e) { DATA = GROUPS; }
+
   // 填充下拉选项
-  GROUPS.forEach(function (g, i) {
+  DATA.forEach(function (g, i) {
     var opt = document.createElement("option");
     opt.value = String(i);
     opt.textContent = g.name;
@@ -78,7 +85,7 @@
   }
 
   function render(index) {
-    var g = GROUPS[index];
+    var g = DATA[index];
     if (!g) return;
     picker.value = String(index);
     page.textContent = ""; // 清空
@@ -95,7 +102,7 @@
   // 支持 #gN 直达（app WebView 返回键可正常回退）
   function fromHash() {
     var m = /^#g(\d+)$/.exec(location.hash);
-    var idx = m ? Math.min(Math.max(0, +m[1]), GROUPS.length - 1) : 0;
+    var idx = m ? Math.min(Math.max(0, +m[1]), DATA.length - 1) : 0;
     render(idx);
   }
 

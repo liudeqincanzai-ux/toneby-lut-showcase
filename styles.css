@@ -50,6 +50,17 @@ html, body {
   pointer-events: none;
 }
 
+/* 顶部右侧「编辑」入口 */
+.edit-link {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #4aa3a3;
+  font-size: 13px;
+  text-decoration: none;
+}
+
 /* ---------- LUT 展示块（仿博客文章式） ---------- */
 #page {
   display: flex;

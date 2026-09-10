@@ -1,89 +1,65 @@
 // ================================================================
-// LUT 展示站 · 数据配置（唯一的配置文件，改内容只改这里）
+// LUT 展示站 · 数据配置
+// ★ 平时不用改这个文件——打开 index.html 右上角「编辑」，在编辑器里
+//   加图片、写文案（自动保存在浏览器里）。点「导出 data.js」把最终
+//   内容下载下来替换本文件，就是发布到 GitHub 的正式版本。
 //
-// 每个 LUT 一个展示块，从上往下排列；顶部下拉切换分组。
-//
-// 字段说明：
-//   name    —— LUT 名称（下拉与标题用）
-//   title   —— 展示块标题（LUT 介绍，可长可短，可不填）
-//   desc    —— 文字描述（可不填，不填不显示）
-//   images  —— 图片路径数组（自由添加，数量不限，自动排成规则矩形网格）
-//   film    —— 使用的胶片（自由填写；不填则不显示；填了显示在图片正下方居中）
-//   note    —— 作者对这组照片的介绍（自由填写；不填则不显示；填了显示在图片正下方居中）
-//   credits —— 补充信息行（如 导演/摄影指导，数组，每行一条；不填不显示）
-//
-// 图片：把你的照片放进 photos/ 文件夹（可建子文件夹），然后把路径写到 images 里。
-// ★ 下面 images 里的 covers/... 只是临时占位示例，替换成你自己的照片路径即可。
-// ★ 分组仍是临时方案，等你给最终分组后再调整 GROUPS 的组合方式。
+// 每个 LUT 一个展示块，字段：name 名称 / title 标题介绍 / desc 描述 /
+// images 图片数组（数量不限，自动排成规则矩形）/ film 使用的胶片 /
+// note 作者介绍 / credits 补充行（不填的字段不显示）
+// 图片请把文件放进 photos/ 文件夹，路径写 "photos/文件名"。
 // ================================================================
 const GROUPS = [
+  { name: "过期胶卷 / GRF", luts: [
+    { name: "过期胶卷", title: "过期胶卷——褪色与灰雾的岁月感", desc: "模拟过期胶卷的褪色发灰、偏色与低饱和质感，适合想要时光感的街拍与人像。示例文案，可在编辑器里随意修改。", images: ["covers/lut_icon_01.jpg", "covers/lut_icon_02.jpg", "covers/lut_icon_03.jpg"], film: "", note: "", credits: [] },
+    { name: "GRF", title: "GRF——理光负片风格", desc: "理光 GR 系列负片质感的调色方向，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_15.jpg", "covers/lut_icon_01.jpg", "covers/lut_icon_18.jpg"], film: "", note: "", credits: [] },
+  ]},
   { name: "FILM LIKE / FILM LIKEⅡ", luts: [
-    {
-      name: "FILM LIKE",
-      title: "FILM LIKE——经典日系胶片质感",
-      desc: "这里写这个 LUT 的介绍与文字描述：适合什么场景、什么光线、色彩倾向如何。示例文本，可在 data.js 中自由修改。",
-      images: ["covers/lut_icon_02.jpg", "covers/lut_icon_03.jpg", "covers/lut_icon_05.jpg",
-               "covers/lut_icon_06.jpg", "covers/lut_icon_07.jpg", "covers/lut_icon_08.jpg"],
-      film: "胶片简介：示例胶片名 | 拍摄于示例地点",
-      note: "作者对这组照片的介绍：示例文字，不填时此行不显示。",
-      credits: [],
-    },
-    {
-      name: "FILM LIKEⅡ",
-      title: "FILM LIKEⅡ——更柔和的第二代配方",
-      desc: "第二个展示块的文字描述示例。图片数量不限，无论几张都会排成规则的矩形网格。",
-      images: ["covers/lut_icon_03.jpg", "covers/lut_icon_02.jpg"],
-      film: "",
-      note: "",
-      credits: [],
-    },
+    { name: "FILM LIKE", title: "FILM LIKE——经典日系胶片质感", desc: "经典日系胶片发色，柔和的低反差与清新肤色，适合日常、人像与旅拍。示例文案，可在编辑器里修改。", images: ["covers/lut_icon_02.jpg", "covers/lut_icon_03.jpg", "covers/lut_icon_05.jpg", "covers/lut_icon_06.jpg", "covers/lut_icon_07.jpg", "covers/lut_icon_08.jpg"], film: "胶片简介：示例胶片名 | 拍摄于示例地点", note: "作者对这组照片的介绍：示例文字，不填时此行不显示。", credits: [] },
+    { name: "FILM LIKEⅡ", title: "FILM LIKEⅡ——更柔和的第二代配方", desc: "在第一代基础上更柔和、更通透的第二代配方，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_03.jpg", "covers/lut_icon_02.jpg", "covers/lut_icon_04.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "仿胶卷 / 仿胶卷Y", luts: [
-    { name: "仿胶卷",  title: "", desc: "", images: ["covers/lut_icon_05.jpg"], film: "", note: "", credits: [] },
-    { name: "仿胶卷Y", title: "", desc: "", images: ["covers/lut_icon_06.jpg"], film: "", note: "", credits: [] },
+    { name: "仿胶卷", title: "仿胶卷——模拟胶片发色", desc: "模拟传统胶片的发色与层次，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_05.jpg", "covers/lut_icon_06.jpg", "covers/lut_icon_01.jpg"], film: "", note: "", credits: [] },
+    { name: "仿胶卷Y", title: "仿胶卷Y——偏黄的暖调版本", desc: "仿胶片的偏黄暖调版本，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_06.jpg", "covers/lut_icon_05.jpg", "covers/lut_icon_02.jpg"], film: "", note: "", credits: [] },
+  ]},
+  { name: "CLASSIC FILM / CC", luts: [
+    { name: "CLASSIC FILM", title: "CLASSIC FILM——经典胶片风格", desc: "厚重的经典胶片风格，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_07.jpg", "covers/lut_icon_08.jpg", "covers/lut_icon_09.jpg"], film: "", note: "", credits: [] },
+    { name: "CC", title: "CC——富士 CC 校色风格", desc: "富士 CC 校色风格，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_04.jpg", "covers/lut_icon_03.jpg", "covers/lut_icon_06.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "Gold200 / Gold200H", luts: [
-    { name: "Gold200",  title: "", desc: "", images: ["covers/lut_icon_09.jpg"], film: "", note: "", credits: [] },
-    { name: "Gold200H", title: "", desc: "", images: ["covers/lut_icon_08.jpg"], film: "", note: "", credits: [] },
+    { name: "Gold200", title: "Gold200——金色 200 胶片色调", desc: "金色 200 的暖调胶片发色，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_09.jpg", "covers/lut_icon_08.jpg", "covers/lut_icon_10.jpg"], film: "", note: "", credits: [] },
+    { name: "Gold200H", title: "Gold200H——高光加强版", desc: "Gold200 的高光加强版本，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_08.jpg", "covers/lut_icon_09.jpg", "covers/lut_icon_11.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "CLASSIC FEATURE / CLASSIC NEGATIVE", luts: [
-    { name: "CLASSIC FEATURE",  title: "", desc: "", images: ["covers/lut_icon_10.jpg"], film: "", note: "", credits: [] },
-    { name: "CLASSIC NEGATIVE", title: "", desc: "", images: ["covers/lut_icon_11.jpg"], film: "", note: "", credits: [] },
+    { name: "CLASSIC FEATURE", title: "CLASSIC FEATURE——经典正片风格", desc: "经典正片（反转片）风格，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_10.jpg", "covers/lut_icon_11.jpg", "covers/lut_icon_12.jpg"], film: "", note: "", credits: [] },
+    { name: "CLASSIC NEGATIVE", title: "CLASSIC NEGATIVE——经典负片风格", desc: "经典彩色负片风格，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_11.jpg", "covers/lut_icon_10.jpg", "covers/lut_icon_13.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "5219 / 5219S", luts: [
-    { name: "5219",  title: "", desc: "", images: ["covers/lut_icon_14.jpg"], film: "", note: "", credits: [] },
-    { name: "5219S", title: "", desc: "", images: ["covers/lut_icon_13.jpg"], film: "", note: "", credits: [] },
-  ]},
-  { name: "过期胶卷 / GRF", luts: [
-    { name: "过期胶卷", title: "", desc: "", images: ["covers/lut_icon_01.jpg"], film: "", note: "", credits: [] },
-    { name: "GRF",      title: "", desc: "", images: ["covers/lut_icon_15.jpg"], film: "", note: "", credits: [] },
+    { name: "5219", title: "5219——柯达 Vision3 5219", desc: "柯达 Vision3 5219 电影胶片发色，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_14.jpg", "covers/lut_icon_13.jpg", "covers/lut_icon_21.jpg"], film: "", note: "", credits: [] },
+    { name: "5219S", title: "5219S——5219 柔和版", desc: "5219 的柔和版本，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_13.jpg", "covers/lut_icon_14.jpg", "covers/lut_icon_22.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "GRFⅡ / CLASSIC FILM", luts: [
-    { name: "GRFⅡ",        title: "", desc: "", images: ["covers/lut_icon_18.jpg"], film: "", note: "", credits: [] },
-    { name: "CLASSIC FILM", title: "", desc: "", images: ["covers/lut_icon_07.jpg"], film: "", note: "", credits: [] },
+    { name: "GRFⅡ", title: "GRFⅡ——理光负片第二代", desc: "理光负片第二代配方，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_18.jpg", "covers/lut_icon_15.jpg", "covers/lut_icon_01.jpg"], film: "", note: "", credits: [] },
+    { name: "CLASSIC FILM", title: "CLASSIC FILM（组二）", desc: "与 CLASSIC FILM 相关的展示块，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_07.jpg", "covers/lut_icon_10.jpg", "covers/lut_icon_11.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "BWL / BWLL", luts: [
-    { name: "BWL",  title: "", desc: "", images: ["covers/lut_icon_16.jpg"], film: "", note: "", credits: [] },
-    { name: "BWLL", title: "", desc: "", images: ["covers/lut_icon_17.jpg"], film: "", note: "", credits: [] },
+    { name: "BWL", title: "BWL——黑白 L", desc: "黑白调色 L 版本，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_16.jpg", "covers/lut_icon_17.jpg", "covers/lut_icon_19.jpg"], film: "", note: "", credits: [] },
+    { name: "BWLL", title: "BWLL——黑白 LL", desc: "黑白调色 LL 版本，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_17.jpg", "covers/lut_icon_16.jpg", "covers/lut_icon_20.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "GS S800 / GS P3", luts: [
-    { name: "GS S800", title: "", desc: "", images: ["covers/lut_icon_19.jpg"], film: "", note: "", credits: [] },
-    { name: "GS P3",   title: "", desc: "", images: ["covers/lut_icon_20.jpg"], film: "", note: "", credits: [] },
+    { name: "GS S800", title: "GS S800——灰度 S800", desc: "灰度 S800 风格，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_19.jpg", "covers/lut_icon_20.jpg", "covers/lut_icon_16.jpg"], film: "", note: "", credits: [] },
+    { name: "GS P3", title: "GS P3——灰度 P3", desc: "灰度 P3 风格，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_20.jpg", "covers/lut_icon_19.jpg", "covers/lut_icon_17.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "MOVIE / MOVIEⅡ", luts: [
-    { name: "MOVIE",   title: "", desc: "", images: ["covers/lut_icon_21.jpg"], film: "", note: "", credits: [] },
-    { name: "MOVIEⅡ", title: "", desc: "", images: ["covers/lut_icon_22.jpg"], film: "", note: "", credits: [] },
+    { name: "MOVIE", title: "MOVIE——电影感调色", desc: "电影感的青橙调色方向，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_21.jpg", "covers/lut_icon_22.jpg", "covers/lut_icon_14.jpg"], film: "", note: "", credits: [] },
+    { name: "MOVIEⅡ", title: "MOVIEⅡ——电影感第二代", desc: "电影感第二代配方，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_22.jpg", "covers/lut_icon_21.jpg", "covers/lut_icon_13.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "D55 / D65", luts: [
-    { name: "D55", title: "", desc: "", images: ["covers/lut_icon_23.jpg"], film: "", note: "", credits: [] },
-    { name: "D65", title: "", desc: "", images: ["covers/lut_icon_24.jpg"], film: "", note: "", credits: [] },
-  ]},
-  { name: "CC / NEGATIVE", luts: [
-    { name: "CC",       title: "", desc: "", images: ["covers/lut_icon_04.jpg"], film: "", note: "", credits: [] },
-    { name: "NEGATIVE", title: "", desc: "", images: ["covers/lut_icon_12.jpg"], film: "", note: "", credits: [] },
+    { name: "D55", title: "D55——日光 5500K", desc: "日光 5500K 色温基准的调色，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_23.jpg", "covers/lut_icon_24.jpg", "covers/lut_icon_09.jpg"], film: "", note: "", credits: [] },
+    { name: "D65", title: "D65——标准日光 6500K", desc: "标准日光 6500K 色温基准的调色，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_24.jpg", "covers/lut_icon_23.jpg", "covers/lut_icon_10.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "Classic F200 / 5207", luts: [
-    { name: "Classic F200", title: "", desc: "", images: ["covers/lut_icon_25.jpg"], film: "", note: "", credits: [] },
-    { name: "5207",         title: "", desc: "", images: ["covers/lut_icon_26.jpg"], film: "", note: "", credits: [] },
+    { name: "Classic F200", title: "Classic F200——富士经典 F250 风格", desc: "富士经典 F250 胶片风格，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_25.jpg", "covers/lut_icon_26.jpg", "covers/lut_icon_11.jpg"], film: "", note: "", credits: [] },
+    { name: "5207", title: "5207——柯达 5207", desc: "柯达 Vision3 5207 电影胶片发色，示例文案，可在编辑器里修改。", images: ["covers/lut_icon_26.jpg", "covers/lut_icon_25.jpg", "covers/lut_icon_21.jpg"], film: "", note: "", credits: [] },
   ]},
 ];

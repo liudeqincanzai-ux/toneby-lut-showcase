@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>内容编辑器 · Toneby LUT</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+  <header class="edit-bar">
+    <a class="bar-link" href="index.html">← 返回预览</a>
+    <span class="bar-title">内容编辑器</span>
+    <span class="bar-actions">
+      <button id="btnExport" type="button">导出 data.js</button>
+      <button id="btnReset" type="button" class="ghost">恢复默认</button>
+    </span>
+  </header>
+  <div class="edit-layout">
+    <nav id="lutList" class="lut-list"></nav>
+    <div id="editor" class="editor-pane"></div>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="data.js"></script>
+  <script src="editor.js"></script>
+</body>
+</html>
