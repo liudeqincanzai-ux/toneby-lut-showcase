@@ -1,5 +1,48 @@
 /* 编辑器专用样式（叠加在 styles.css 之上，底色同为 #161616） */
 
+/* ---------- 密码门 ---------- */
+.gate {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.gate-box {
+  width: min(340px, 92vw);
+  background: #1c1c1c;
+  border: 1px solid #2c2c2c;
+  border-radius: 10px;
+  padding: 30px 26px;
+  text-align: center;
+}
+.gate-box h1 { font-size: 19px; color: #e8e8e8; margin-bottom: 6px; }
+.gate-hint { font-size: 13px; color: #8a8a8a; margin-bottom: 18px; }
+.gate-box input {
+  width: 100%;
+  background: #161616;
+  color: #e8e8e8;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.gate-box input:focus { border-color: #4aa3a3; }
+.gate-box button {
+  width: 100%;
+  background: #2a5c46;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.gate-err { color: #d16a5a; font-size: 13px; min-height: 18px; margin: 8px 0 6px; }
+
 .edit-bar {
   position: sticky;
   top: 0;

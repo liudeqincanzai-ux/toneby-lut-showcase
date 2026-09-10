@@ -8,18 +8,34 @@
   <link rel="stylesheet" href="editor.css">
 </head>
 <body>
-  <header class="edit-bar">
-    <a class="bar-link" href="index.html">← 返回预览</a>
-    <span class="bar-title">内容编辑器</span>
-    <span class="bar-actions">
-      <button id="btnExport" type="button">导出 data.js</button>
-      <button id="btnReset" type="button" class="ghost">恢复默认</button>
-    </span>
-  </header>
-  <div class="edit-layout">
-    <nav id="lutList" class="lut-list"></nav>
-    <div id="editor" class="editor-pane"></div>
+  <!-- 密码门：访客不可见后台 -->
+  <div id="gate" class="gate">
+    <div class="gate-box">
+      <h1>内容编辑器</h1>
+      <p class="gate-hint">请输入管理密码进入</p>
+      <input id="gatePass" type="password" autocomplete="current-password">
+      <button id="gateBtn" type="button">进入</button>
+      <p id="gateErr" class="gate-err"></p>
+      <a class="bar-link" href="index.html">← 返回预览</a>
+    </div>
   </div>
+
+  <!-- 编辑器主体（密码通过后显示） -->
+  <div id="app" style="display:none">
+    <header class="edit-bar">
+      <a class="bar-link" href="index.html">← 返回预览</a>
+      <span class="bar-title">内容编辑器</span>
+      <span class="bar-actions">
+        <button id="btnExport" type="button">导出 data.js</button>
+        <button id="btnReset" type="button" class="ghost">恢复默认</button>
+      </span>
+    </header>
+    <div class="edit-layout">
+      <nav id="lutList" class="lut-list"></nav>
+      <div id="editor" class="editor-pane"></div>
+    </div>
+  </div>
+
   <div id="toast" class="toast"></div>
   <script src="data.js"></script>
   <script src="editor.js"></script>

@@ -6,11 +6,20 @@
   var page = document.getElementById("page");
 
   // 数据来源：编辑器保存过的本地版本优先，否则用 data.js 默认
-  var DATA;
-  try {
-    var saved = JSON.parse(localStorage.getItem("lut_site_edits_v1"));
-    DATA = (saved && saved.groups && saved.groups.length) ? saved.groups : GROUPS;
-  } catch (e) { DATA = GROUPS; }
+  var saved = null;
+  try { saved = JSON.parse(localStorage.getItem("lut_site_edits_v1")); } catch (e) {}
+  var DATA = (saved && saved.groups && saved.groups.length) ? saved.groups : GROUPS;
+  var site = (saved && saved.site) ? saved.site
+    : (typeof SITE !== "undefined" ? SITE : { title: "Toneby LUT Showcase", subtitle: "Explore the colors of Toneby." });
+
+  // 渲染顶部大标题 + 小字（编辑器里可改）
+  var titleEl = document.getElementById("siteTitle");
+  var subEl = document.getElementById("siteSubtitle");
+  if (site.title && String(site.title).trim()) titleEl.textContent = site.title;
+  else titleEl.style.display = "none";
+  if (site.subtitle && String(site.subtitle).trim()) subEl.textContent = site.subtitle;
+  else subEl.style.display = "none";
+  if (site.title || site.subtitle) document.title = site.title || document.title;
 
   // 填充下拉选项
   DATA.forEach(function (g, i) {

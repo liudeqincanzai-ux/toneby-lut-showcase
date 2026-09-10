@@ -8,6 +8,26 @@ html, body {
   min-height: 100%;
 }
 
+/* ---------- 顶部大标题 + 小字 ---------- */
+.hero {
+  text-align: center;
+  padding: 42px 16px 6px;
+}
+
+.hero h1 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #f2f2f2;
+}
+
+.hero p {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #9a9a9a;
+  letter-spacing: 0.3px;
+}
+
 /* ---------- 顶部下拉选择器 ---------- */
 .topbar {
   position: sticky;
@@ -48,17 +68,6 @@ html, body {
   color: #888;
   font-size: 13px;
   pointer-events: none;
-}
-
-/* 顶部右侧「编辑」入口 */
-.edit-link {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #4aa3a3;
-  font-size: 13px;
-  text-decoration: none;
 }
 
 /* ---------- LUT 展示块（仿博客文章式） ---------- */
