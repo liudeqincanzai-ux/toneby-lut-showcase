@@ -283,6 +283,74 @@
       else renderLutEditor(DATA[cur.g].luts[cur.l]);
     }
 
+    // ---------- 首次连接 GitHub 的友好弹窗 ----------
+    function showTokenModal(afterSave) {
+      var overlay = document.createElement("div");
+      overlay.className = "gate";
+      overlay.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:100;";
+      var box = document.createElement("div");
+      box.className = "gate-box";
+      box.style.textAlign = "left";
+
+      var h = document.createElement("h1");
+      h.textContent = "首次使用：连接 GitHub（只需一次）";
+      box.appendChild(h);
+
+      var steps = document.createElement("p");
+      steps.className = "gate-hint";
+      steps.style.textAlign = "left";
+      steps.innerHTML = "为了让你点一下按钮就能把内容发布到网站，需要给编辑器一把「只管这一个仓库」的钥匙：<br>"
+        + "1. 点下面按钮打开 GitHub 授权页（已帮你预选好仓库和权限）<br>"
+        + "2. 拉到页面最底，点绿色的 Generate token<br>"
+        + "3. 复制生成的串（ghp_ 或 github_pat_ 开头），粘贴到下面输入框<br>"
+        + "4. 点「保存并同步」，以后就一直一键发布了";
+      box.appendChild(steps);
+
+      var linkBtn = document.createElement("button");
+      linkBtn.type = "button";
+      linkBtn.style.cssText = "width:100%;margin-bottom:12px;";
+      linkBtn.textContent = "① 打开 GitHub 授权页（新窗口）";
+      linkBtn.onclick = function () {
+        window.open("https://github.com/settings/personal-access-tokens/new"
+          + "?name=Toneby%20LUT%20editor&target_name=toneby-lut-showcase&contents=write", "_blank");
+      };
+      box.appendChild(linkBtn);
+
+      var input = document.createElement("input");
+      input.type = "password";
+      input.placeholder = "② 粘贴刚才复制的 Token";
+      box.appendChild(input);
+
+      var errP = document.createElement("p");
+      errP.className = "gate-err";
+      box.appendChild(errP);
+
+      var saveBtn = document.createElement("button");
+      saveBtn.type = "button";
+      saveBtn.textContent = "③ 保存并同步到网站";
+      saveBtn.onclick = function () {
+        var v = input.value.trim();
+        if (!v) { errP.textContent = "先把 Token 粘贴进来"; return; }
+        setToken(v);
+        overlay.remove();
+        toast("Token 已保存 ✓");
+        afterSave();
+      };
+      box.appendChild(saveBtn);
+
+      var later = document.createElement("a");
+      later.className = "bar-link";
+      later.href = "#";
+      later.style.cssText = "display:block;margin-top:10px;text-align:center;";
+      later.textContent = "先跳过，稍后再连（内容仍会自动保存在本机）";
+      later.onclick = function (e) { e.preventDefault(); overlay.remove(); };
+      box.appendChild(later);
+
+      overlay.appendChild(box);
+      document.body.appendChild(overlay);
+      input.focus();
+    }
+
     // ---------- 一键同步到 GitHub（网站自动更新） ----------
     function buildDataJs() {
       return "// 本文件由内容编辑器同步生成（" + new Date().toISOString() + "）\n"
@@ -337,9 +405,9 @@
     }
 
     document.getElementById("btnSync").onclick = function () {
-      var token = getToken();
-      if (!token) {
-        setStatus("还没设置 GitHub Token：到左侧「⚙ 网站标题 / 密码」页粘贴一次即可", true);
+      if (!getToken()) {
+        setStatus("", false);
+        showTokenModal(function () { document.getElementById("btnSync").click(); });
         return;
       }
       // 先本地保存
