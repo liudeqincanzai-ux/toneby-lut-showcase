@@ -1,66 +1,89 @@
 // ================================================================
-// LUT 展示站 · 数据配置（唯一的分组配置文件，改分组只改这里）
-// cover 编号与 app 内置 LUT 顺序一一对应：
-// lut_icon_01=过期胶卷 02=FILM LIKE 03=FILM LIKEⅡ 04=CC
-// 05=仿胶卷 06=仿胶卷Y 07=CLASSIC FILM 08=Gold200H 09=Gold200
-// 10=CLASSIC FEATURE 11=CLASSIC NEGATIVE 12=NEGATIVE 13=5219S 14=5219
-// 15=GRF 16=BWL 17=BWLL 18=GRFⅡ 19=GS S800 20=GS P3
-// 21=MOVIE 22=MOVIEⅡ 23=D55 24=D65 25=Classic F200 26=5207
+// LUT 展示站 · 数据配置（唯一的配置文件，改内容只改这里）
 //
-// 结构：每组一个页面；组内每个 LUT 一个格子，从上往下依次展示。
-// ★ 当前为临时分组，等用户给出最终分组后替换 GROUPS 即可。
+// 每个 LUT 一个展示块，从上往下排列；顶部下拉切换分组。
+//
+// 字段说明：
+//   name    —— LUT 名称（下拉与标题用）
+//   title   —— 展示块标题（LUT 介绍，可长可短，可不填）
+//   desc    —— 文字描述（可不填，不填不显示）
+//   images  —— 图片路径数组（自由添加，数量不限，自动排成规则矩形网格）
+//   film    —— 使用的胶片（自由填写；不填则不显示；填了显示在图片正下方居中）
+//   note    —— 作者对这组照片的介绍（自由填写；不填则不显示；填了显示在图片正下方居中）
+//   credits —— 补充信息行（如 导演/摄影指导，数组，每行一条；不填不显示）
+//
+// 图片：把你的照片放进 photos/ 文件夹（可建子文件夹），然后把路径写到 images 里。
+// ★ 下面 images 里的 covers/... 只是临时占位示例，替换成你自己的照片路径即可。
+// ★ 分组仍是临时方案，等你给最终分组后再调整 GROUPS 的组合方式。
 // ================================================================
 const GROUPS = [
   { name: "FILM LIKE / FILM LIKEⅡ", luts: [
-    { name: "FILM LIKE",   cover: "covers/lut_icon_02.jpg" },
-    { name: "FILM LIKEⅡ", cover: "covers/lut_icon_03.jpg" },
+    {
+      name: "FILM LIKE",
+      title: "FILM LIKE——经典日系胶片质感",
+      desc: "这里写这个 LUT 的介绍与文字描述：适合什么场景、什么光线、色彩倾向如何。示例文本，可在 data.js 中自由修改。",
+      images: ["covers/lut_icon_02.jpg", "covers/lut_icon_03.jpg", "covers/lut_icon_05.jpg",
+               "covers/lut_icon_06.jpg", "covers/lut_icon_07.jpg", "covers/lut_icon_08.jpg"],
+      film: "胶片简介：示例胶片名 | 拍摄于示例地点",
+      note: "作者对这组照片的介绍：示例文字，不填时此行不显示。",
+      credits: [],
+    },
+    {
+      name: "FILM LIKEⅡ",
+      title: "FILM LIKEⅡ——更柔和的第二代配方",
+      desc: "第二个展示块的文字描述示例。图片数量不限，无论几张都会排成规则的矩形网格。",
+      images: ["covers/lut_icon_03.jpg", "covers/lut_icon_02.jpg"],
+      film: "",
+      note: "",
+      credits: [],
+    },
   ]},
   { name: "仿胶卷 / 仿胶卷Y", luts: [
-    { name: "仿胶卷",  cover: "covers/lut_icon_05.jpg" },
-    { name: "仿胶卷Y", cover: "covers/lut_icon_06.jpg" },
+    { name: "仿胶卷",  title: "", desc: "", images: ["covers/lut_icon_05.jpg"], film: "", note: "", credits: [] },
+    { name: "仿胶卷Y", title: "", desc: "", images: ["covers/lut_icon_06.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "Gold200 / Gold200H", luts: [
-    { name: "Gold200",  cover: "covers/lut_icon_09.jpg" },
-    { name: "Gold200H", cover: "covers/lut_icon_08.jpg" },
+    { name: "Gold200",  title: "", desc: "", images: ["covers/lut_icon_09.jpg"], film: "", note: "", credits: [] },
+    { name: "Gold200H", title: "", desc: "", images: ["covers/lut_icon_08.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "CLASSIC FEATURE / CLASSIC NEGATIVE", luts: [
-    { name: "CLASSIC FEATURE",  cover: "covers/lut_icon_10.jpg" },
-    { name: "CLASSIC NEGATIVE", cover: "covers/lut_icon_11.jpg" },
+    { name: "CLASSIC FEATURE",  title: "", desc: "", images: ["covers/lut_icon_10.jpg"], film: "", note: "", credits: [] },
+    { name: "CLASSIC NEGATIVE", title: "", desc: "", images: ["covers/lut_icon_11.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "5219 / 5219S", luts: [
-    { name: "5219",  cover: "covers/lut_icon_14.jpg" },
-    { name: "5219S", cover: "covers/lut_icon_13.jpg" },
+    { name: "5219",  title: "", desc: "", images: ["covers/lut_icon_14.jpg"], film: "", note: "", credits: [] },
+    { name: "5219S", title: "", desc: "", images: ["covers/lut_icon_13.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "过期胶卷 / GRF", luts: [
-    { name: "过期胶卷", cover: "covers/lut_icon_01.jpg" },
-    { name: "GRF",      cover: "covers/lut_icon_15.jpg" },
+    { name: "过期胶卷", title: "", desc: "", images: ["covers/lut_icon_01.jpg"], film: "", note: "", credits: [] },
+    { name: "GRF",      title: "", desc: "", images: ["covers/lut_icon_15.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "GRFⅡ / CLASSIC FILM", luts: [
-    { name: "GRFⅡ",        cover: "covers/lut_icon_18.jpg" },
-    { name: "CLASSIC FILM", cover: "covers/lut_icon_07.jpg" },
+    { name: "GRFⅡ",        title: "", desc: "", images: ["covers/lut_icon_18.jpg"], film: "", note: "", credits: [] },
+    { name: "CLASSIC FILM", title: "", desc: "", images: ["covers/lut_icon_07.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "BWL / BWLL", luts: [
-    { name: "BWL",  cover: "covers/lut_icon_16.jpg" },
-    { name: "BWLL", cover: "covers/lut_icon_17.jpg" },
+    { name: "BWL",  title: "", desc: "", images: ["covers/lut_icon_16.jpg"], film: "", note: "", credits: [] },
+    { name: "BWLL", title: "", desc: "", images: ["covers/lut_icon_17.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "GS S800 / GS P3", luts: [
-    { name: "GS S800", cover: "covers/lut_icon_19.jpg" },
-    { name: "GS P3",   cover: "covers/lut_icon_20.jpg" },
+    { name: "GS S800", title: "", desc: "", images: ["covers/lut_icon_19.jpg"], film: "", note: "", credits: [] },
+    { name: "GS P3",   title: "", desc: "", images: ["covers/lut_icon_20.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "MOVIE / MOVIEⅡ", luts: [
-    { name: "MOVIE",   cover: "covers/lut_icon_21.jpg" },
-    { name: "MOVIEⅡ", cover: "covers/lut_icon_22.jpg" },
+    { name: "MOVIE",   title: "", desc: "", images: ["covers/lut_icon_21.jpg"], film: "", note: "", credits: [] },
+    { name: "MOVIEⅡ", title: "", desc: "", images: ["covers/lut_icon_22.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "D55 / D65", luts: [
-    { name: "D55", cover: "covers/lut_icon_23.jpg" },
-    { name: "D65", cover: "covers/lut_icon_24.jpg" },
+    { name: "D55", title: "", desc: "", images: ["covers/lut_icon_23.jpg"], film: "", note: "", credits: [] },
+    { name: "D65", title: "", desc: "", images: ["covers/lut_icon_24.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "CC / NEGATIVE", luts: [
-    { name: "CC",       cover: "covers/lut_icon_04.jpg" },
-    { name: "NEGATIVE", cover: "covers/lut_icon_12.jpg" },
+    { name: "CC",       title: "", desc: "", images: ["covers/lut_icon_04.jpg"], film: "", note: "", credits: [] },
+    { name: "NEGATIVE", title: "", desc: "", images: ["covers/lut_icon_12.jpg"], film: "", note: "", credits: [] },
   ]},
   { name: "Classic F200 / 5207", luts: [
-    { name: "Classic F200", cover: "covers/lut_icon_25.jpg" },
-    { name: "5207",         cover: "covers/lut_icon_26.jpg" },
+    { name: "Classic F200", title: "", desc: "", images: ["covers/lut_icon_25.jpg"], film: "", note: "", credits: [] },
+    { name: "5207",         title: "", desc: "", images: ["covers/lut_icon_26.jpg"], film: "", note: "", credits: [] },
   ]},
 ];

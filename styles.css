@@ -50,42 +50,85 @@ html, body {
   pointer-events: none;
 }
 
-/* ---------- LUT 列表 ---------- */
+/* ---------- LUT 展示块（仿博客文章式） ---------- */
 #page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px 16px 48px;
+  padding: 12px 16px 56px;
 }
 
-.lut-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.lut-post {
+  width: min(620px, 100%);
 }
 
-.lut-item + .lut-item { margin-top: 28px; }
-
-/* 250×170px 固定尺寸格子（用户指定） */
-.lut-cell {
-  width: 250px;
-  height: 170px;
-  overflow: hidden;
-  border-radius: 4px;
+.lut-post + .lut-post {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid #262626;
 }
 
-.lut-cell img {
+/* 标题（LUT 介绍）——参照 Dehancer 博客的青绿色 */
+.lut-title {
+  font-size: 21px;
+  line-height: 1.45;
+  font-weight: 600;
+  color: #4aa3a3;
+  margin-bottom: 10px;
+}
+
+/* 文字描述 */
+.lut-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #9a9a9a;
+  margin-bottom: 18px;
+}
+
+/* ---------- 照片网格：规则矩形 + 固定间距（用户要求） ---------- */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;               /* 每张图片之间固定 8px 间距 */
+  background: #161616;
+}
+
+.photo-grid img {
   width: 100%;
-  height: 100%;
+  height: 118px;          /* 统一高度 → 整块始终是规则矩形 */
   object-fit: cover;
   display: block;
+  border-radius: 2px;
+  background: #1f1f1f;
 }
 
-/* 名字在格子外（用户指定） */
-.lut-item figcaption {
-  margin-top: 8px;
-  font-size: 13px;
-  color: #b8b8b8;
-  letter-spacing: 0.4px;
+/* 手机窄屏改 2 列，仍保持规则矩形 */
+@media (max-width: 480px) {
+  .photo-grid { grid-template-columns: repeat(2, 1fr); }
+  .photo-grid img { height: 118px; }
+}
+
+/* ---------- 图片正下方居中：胶片 / 作者介绍（不填不显示） ---------- */
+.photo-caption {
+  margin-top: 14px;
   text-align: center;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #c9c9c9;
+}
+
+.photo-caption .film-line { display: block; }
+.photo-caption .note-line { display: block; color: #a8a8a8; }
+
+/* ---------- 补充信息行（导演/摄影指导式，可选） ---------- */
+.credits {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.credits div {
+  font-size: 14px;
+  color: #b8b8b8;
 }
