@@ -1,10 +1,13 @@
 // 内容编辑器 · 密码门 + 加图片/写文案全在这里操作
 // 入口：访客不知道 edit.html 与密码就进不来；展示页(index.html)无任何编辑入口
 // 保存：自动存进浏览器 localStorage（本机立即生效，预览页同步显示）
-// 发布：点「导出 data.js」下载文件，替换站点里的 data.js（提交到 GitHub 即正式发布）
+// 发布：「保存并同步到网站」一键 = 保存 + 直接提交 GitHub + 网站自动更新
+//       （首次需在「网站设置」里填一次 GitHub Token；「导出 data.js」留作备份手段）
 (function () {
   var SAVE_KEY = "lut_site_edits_v1";
   var PASS_KEY = "lut_site_admin_pass";
+  var TOKEN_KEY = "lut_gh_token";
+  var GH_REPO = "liudeqincanzai-ux/toneby-lut-showcase"; // 同步目标仓库
   var DEFAULT_SITE = (typeof SITE !== "undefined")
     ? SITE
     : { title: "Toneby LUT Showcase", subtitle: "Explore the colors of Toneby." };
@@ -25,6 +28,15 @@
   }
   function setPassword(p) {
     try { localStorage.setItem(PASS_KEY, p); } catch (e) {}
+  }
+  function getToken() {
+    try { return (localStorage.getItem(TOKEN_KEY) || "").trim(); } catch (e) { return ""; }
+  }
+  function setToken(t) {
+    try {
+      if (t && t.trim()) localStorage.setItem(TOKEN_KEY, t.trim());
+      else localStorage.removeItem(TOKEN_KEY);
+    } catch (e) {}
   }
 
   // ---------- 密码门 ----------
@@ -62,11 +74,14 @@
   // ---------- 编辑器主体 ----------
   function initEditor() {
     var cur = { g: 0, l: 0 }; // g=-1 表示「网站设置」页
-    var objUrls = {}; // 运行期预览用 objectURL
+    var objUrls = {};     // 运行期预览用 objectURL
+    var pendingFiles = {}; // path -> File（本会话新选的图片，待同步上传）
 
     var listEl = document.getElementById("lutList");
     var editorEl = document.getElementById("editor");
     var toastEl = document.getElementById("toast");
+    var statusEl = document.getElementById("syncStatus");
+    var btnSync = document.getElementById("btnSync");
 
     function toast(msg) {
       toastEl.textContent = msg;
@@ -142,6 +157,22 @@
       editorEl.appendChild(field("修改管理密码", "留空表示不修改；改完下次进编辑器用新密码", "", function (v) {
         if (v && v.trim()) { setPassword(v.trim()); toast("密码已修改 ✓"); }
       }));
+
+      // GitHub Token（「保存并同步到网站」用，只需填一次）
+      var ghField = document.createElement("div");
+      ghField.className = "field";
+      var ghLab = document.createElement("label");
+      ghLab.innerHTML = "GitHub Token（一键同步网站用，只需填一次）<span class=\"hint\">（点右上角「保存并同步到网站」按钮即自动更新网站；没有 Token 时按钮会提示）</span>";
+      ghField.appendChild(ghLab);
+      var ghInput = document.createElement("input");
+      ghInput.type = "password";
+      ghInput.placeholder = getToken() ? "已设置（重新粘贴可更换）" : "粘贴 GitHub Token";
+      ghInput.value = "";
+      ghInput.oninput = function () {
+        if (ghInput.value.trim()) { setToken(ghInput.value); toast("Token 已保存 ✓"); }
+      };
+      ghField.appendChild(ghInput);
+      editorEl.appendChild(ghField);
 
       var tip = document.createElement("p");
       tip.className = "gate-hint";
@@ -231,12 +262,13 @@
           var path = "photos/" + f.name;
           if (objUrls[f.name]) URL.revokeObjectURL(objUrls[f.name]);
           objUrls[path] = URL.createObjectURL(f);
+          pendingFiles[path] = f; // 记住文件本体，同步时上传到 GitHub
           if (!lut.images) lut.images = [];
           lut.images.push(path);
         });
         saveQuiet();
         rerenderImages();
-        if (files.length) toast("已添加 " + files.length + " 张 ✓ 记得把原图放进 photos/ 文件夹");
+        if (files.length) toast("已添加 " + files.length + " 张 ✓ 点「保存并同步到网站」即上线");
         fileInput.value = "";
       };
       addBtn.onclick = function () { fileInput.click(); };
@@ -251,12 +283,108 @@
       else renderLutEditor(DATA[cur.g].luts[cur.l]);
     }
 
-    // ---------- 导出 data.js ----------
-    document.getElementById("btnExport").onclick = function () {
-      var text = "// 本文件由内容编辑器导出（" + new Date().toLocaleString() + "）\n"
+    // ---------- 一键同步到 GitHub（网站自动更新） ----------
+    function buildDataJs() {
+      return "// 本文件由内容编辑器同步生成（" + new Date().toISOString() + "）\n"
         + "// 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。\n"
         + "const SITE = " + JSON.stringify(SITE_DATA, null, 2) + ";\n\n"
         + "const GROUPS = " + JSON.stringify(DATA, null, 2) + ";\n";
+    }
+
+    function toB64(bytes) {
+      var bin = "";
+      var CHUNK = 0x8000;
+      for (var i = 0; i < bytes.length; i += CHUNK) {
+        bin += String.fromCharCode.apply(null, bytes.subarray(i, i + CHUNK));
+      }
+      return btoa(bin);
+    }
+
+    function ghApi(path, opts) {
+      opts = opts || {};
+      opts.headers = Object.assign({
+        "Authorization": "Bearer " + getToken(),
+        "Accept": "application/vnd.github+json",
+      }, opts.headers || {});
+      return fetch("https://api.github.com" + path, opts).then(function (res) {
+        if (res.status === 401) throw new Error("Token 无效或已过期，请到「网站设置」重新粘贴");
+        if (res.status === 403) throw new Error("Token 权限不足（需要该仓库 Contents 读写权限）");
+        return res;
+      });
+    }
+
+    // 提交单个文件（自动带 sha 覆盖已有文件）
+    function ghPutFile(path, contentB64, message) {
+      return ghApi("/repos/" + GH_REPO + "/contents/" + encodeURI(path))
+        .then(function (r) { return r.json(); })
+        .then(function (info) { return info.sha; })
+        .catch(function (e) {
+          if (e.message.indexOf("Token") === 0 || e.message.indexOf("权限") >= 0) throw e;
+          return null; // 404 = 新文件
+        })
+        .then(function (sha) {
+          return ghApi("/repos/" + GH_REPO + "/contents/" + encodeURI(path), {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: message, content: contentB64, sha: sha || undefined }),
+          });
+        });
+    }
+
+    function setStatus(msg, isErr) {
+      statusEl.textContent = msg;
+      statusEl.className = "sync-status" + (isErr ? " err" : "");
+    }
+
+    document.getElementById("btnSync").onclick = function () {
+      var token = getToken();
+      if (!token) {
+        setStatus("还没设置 GitHub Token：到左侧「⚙ 网站标题 / 密码」页粘贴一次即可", true);
+        return;
+      }
+      // 先本地保存
+      saveQuiet();
+
+      btnSync.disabled = true;
+      var jobs = [["data.js", Promise.resolve(toB64(new TextEncoder().encode(buildDataJs())))]];
+
+      // 本会话新选的图片一起上传
+      Object.keys(pendingFiles).forEach(function (path) {
+        jobs.push([path, pendingFiles[path].arrayBuffer().then(function (buf) {
+          return toB64(new Uint8Array(buf));
+        })]);
+      });
+
+      var done = 0, failed = 0;
+      setStatus("同步中 0/" + jobs.length + " …");
+
+      jobs.reduce(function (chain, job) {
+        return chain.then(function () {
+          return job[1].then(function (b64) {
+            return ghPutFile(job[0], b64, "编辑器更新: " + job[0]);
+          }).then(function () {
+            done++;
+            setStatus("同步中 " + done + "/" + jobs.length + " …");
+            if (job[0] !== "data.js") delete pendingFiles[job[0]];
+          }).catch(function (e) {
+            failed++;
+            setStatus("「" + job[0] + "」同步失败：" + e.message, true);
+          });
+        });
+      }, Promise.resolve()).then(function () {
+        btnSync.disabled = false;
+        if (failed === 0) {
+          setStatus("✓ 已同步到 GitHub，网站约 1 分钟内自动更新完成");
+          toast("同步成功 ✓");
+        } else {
+          setStatus("部分失败（" + failed + " 个），可再点一次重试", true);
+        }
+      });
+    };
+
+    // ---------- 导出 data.js ----------
+    document.getElementById("btnExport").onclick = function () {
+      var text = buildDataJs();
       var blob = new Blob([text], { type: "text/javascript;charset=utf-8" });
       var a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
@@ -264,7 +392,7 @@
       document.body.appendChild(a);
       a.click();
       a.remove();
-      toast("data.js 已下载 ✓ 替换站点同名文件即发布");
+      toast("data.js 已下载 ✓（备份用；日常发布用「保存并同步到网站」）");
     };
 
     // ---------- 恢复默认 ----------

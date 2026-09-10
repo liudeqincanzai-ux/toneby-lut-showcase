@@ -58,7 +58,7 @@
 
 .bar-link { color: #4aa3a3; text-decoration: none; font-size: 14px; }
 .bar-title { font-size: 15px; font-weight: 600; color: #e8e8e8; }
-.bar-actions { display: flex; gap: 8px; }
+.bar-actions { display: flex; align-items: center; gap: 8px; }
 
 .bar-actions button, .img-actions button, .add-img-btn {
   background: #2a5c46;
@@ -69,6 +69,21 @@
   font-size: 13px;
   cursor: pointer;
 }
+.bar-actions button.primary {
+  background: #2f7d54;
+  font-weight: 600;
+}
+.bar-actions button:disabled { opacity: .55; cursor: default; }
+
+.sync-status {
+  font-size: 12px;
+  color: #9fd0b4;
+  max-width: 240px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sync-status.err { color: #d16a5a; white-space: normal; }
 .bar-actions button.ghost, .img-actions button.ghost {
   background: #2a2a2a;
   color: #c9c9c9;
