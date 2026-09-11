@@ -54,25 +54,35 @@
     }));
   }
 
-  // 分行：贪心装到行高低于下限就收行；末行过高的往前一行借图，保证整体无空缺
-  function splitRows(items, W, targetH, minH) {
-    var rows = [], cur = [], sum = 0;
-    for (var i = 0; i < items.length; i++) {
-      cur.push(items[i]); sum += items[i].ar;
-      var h = (W - GAP * (cur.length - 1)) / sum;
-      if (h < minH && cur.length > 1) {
-        var moved = cur.pop(); sum -= moved.ar;
-        rows.push(cur); cur = [moved]; sum = moved.ar;
+  // 分行：动态规划全局最优——所有行的高度都尽可能接近目标高，行高差最小化
+  // （每行仍按 Σ宽高比 精确铺满宽度，末行同样参与优化，无空缺）
+  function splitRows(items, W, targetH) {
+    var n = items.length;
+    var pre = [0];
+    for (var k = 0; k < n; k++) pre.push(pre[k] + items[k].ar);
+    var INF = 1e18;
+    var dp = new Array(n + 1).fill(INF);
+    var from = new Array(n + 1).fill(-1);
+    dp[0] = 0;
+    for (var i = 1; i <= n; i++) {
+      for (var j = 0; j < i; j++) {
+        var cnt = i - j;
+        var sum = pre[i] - pre[j];
+        var h = (W - GAP * (cnt - 1)) / sum;
+        if (h < targetH * 0.5) continue; // 单行图太多导致行高过矮，不划算
+        var cost = dp[j] + (h - targetH) * (h - targetH);
+        if (cost < dp[i]) { dp[i] = cost; from[i] = j; }
       }
     }
-    if (cur.length) rows.push(cur);
-    var guard = 0;
-    while (rows.length > 1 && guard++ < 50) {
-      var lastR = rows[rows.length - 1], prevR = rows[rows.length - 2];
-      var s = lastR.reduce(function (a, b) { return a + b.ar; }, 0);
-      var lh = (W - GAP * (lastR.length - 1)) / s;
-      if (lh > targetH * 1.6 && prevR.length > 1) lastR.unshift(prevR.pop());
-      else break;
+    var rows = [], i2 = n;
+    if (dp[n] >= INF) { // 兜底（理论不会走到）：逐图一行
+      for (var q = 0; q < n; q++) rows.push([items[q]]);
+      return rows;
+    }
+    while (i2 > 0) {
+      var j2 = from[i2];
+      rows.unshift(items.slice(j2, i2));
+      i2 = j2;
     }
     return rows;
   }
@@ -81,8 +91,7 @@
   function renderRows(container, items, W) {
     container.textContent = "";
     var targetH = W < 480 ? 110 : 150;
-    var minH = targetH * 0.7;
-    var rows = splitRows(items, W, targetH, minH);
+    var rows = splitRows(items, W, targetH);
     rows.forEach(function (row) {
       var sum = row.reduce(function (a, b) { return a + b.ar; }, 0);
       var h = (W - GAP * (row.length - 1)) / sum;
