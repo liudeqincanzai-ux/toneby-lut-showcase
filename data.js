@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-09-11T11:44:36.415Z）
+// 本文件由内容编辑器同步生成（2026-09-11T11:48:05.907Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -243,9 +243,7 @@ const GROUPS = [
         "title": "5219——柯达 Vision3 5219",
         "desc": "柯达 Vision3 5219 电影胶片发色，示例文案，可在编辑器里修改。",
         "images": [
-          "covers/lut_icon_14.jpg",
-          "covers/lut_icon_13.jpg",
-          "covers/lut_icon_21.jpg"
+          "photos/Toneby-1789121326091-5219T-edited.jpg"
         ],
         "film": "",
         "note": "",
