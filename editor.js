@@ -392,7 +392,28 @@
       }
       rerenderImages();
 
-      // 添加图片：多选文件。文件名即最终路径 photos/文件名（发布前把文件放进 photos/ 文件夹）
+      // 添加图片：多选文件。上传前自动压缩（长边 1600px、JPEG q82），保证网页秒开
+      function shrinkImage(file, cb) {
+        var url = URL.createObjectURL(file);
+        var im = new Image();
+        im.onload = function () {
+          URL.revokeObjectURL(url);
+          var scale = Math.min(1, 1600 / Math.max(im.naturalWidth, im.naturalHeight));
+          if (scale >= 1 && file.size < 500 * 1024) { cb(file); return; } // 已够小，不压
+          var c = document.createElement("canvas");
+          c.width = Math.round(im.naturalWidth * scale);
+          c.height = Math.round(im.naturalHeight * scale);
+          c.getContext("2d").drawImage(im, 0, 0, c.width, c.height);
+          c.toBlob(function (blob) {
+            if (!blob) { cb(file); return; }
+            var outName = file.name.replace(/\.(png|webp|jpeg|jpg)$/i, ".jpg");
+            cb(new File([blob], outName, { type: "image/jpeg" }));
+          }, "image/jpeg", 0.82);
+        };
+        im.onerror = function () { URL.revokeObjectURL(url); cb(file); };
+        im.src = url;
+      }
+
       var addBtn = document.createElement("button");
       addBtn.type = "button";
       addBtn.className = "add-img-btn";
@@ -404,18 +425,25 @@
       fileInput.style.display = "none";
       fileInput.onchange = function () {
         var files = Array.prototype.slice.call(fileInput.files || []);
+        var left = files.length;
+        if (!left) { fileInput.value = ""; return; }
         files.forEach(function (f) {
-          var path = "photos/" + f.name;
-          if (objUrls[f.name]) URL.revokeObjectURL(objUrls[f.name]);
-          objUrls[path] = URL.createObjectURL(f);
-          pendingFiles[path] = f; // 记住文件本体，同步时上传到 GitHub
-          if (!lut.images) lut.images = [];
-          lut.images.push(path);
+          shrinkImage(f, function (out) {
+            var path = "photos/" + out.name;
+            if (objUrls[path]) URL.revokeObjectURL(objUrls[path]);
+            objUrls[path] = URL.createObjectURL(out);
+            pendingFiles[path] = out; // 压缩后的文件，同步时上传到 GitHub
+            if (!lut.images) lut.images = [];
+            lut.images.push(path);
+            saveQuiet();
+            rerenderImages();
+            left--;
+            if (left === 0) {
+              toast("已添加 ✓ 已自动压缩（点「保存并同步到网站」上线）");
+              fileInput.value = "";
+            }
+          });
         });
-        saveQuiet();
-        rerenderImages();
-        if (files.length) toast("已添加 " + files.length + " 张 ✓ 点「保存并同步到网站」即上线");
-        fileInput.value = "";
       };
       addBtn.onclick = function () { fileInput.click(); };
       imgField.appendChild(manager);

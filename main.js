@@ -132,6 +132,7 @@
         var img = document.createElement("img");
         img.src = im.src;
         img.alt = "";
+        img.loading = "lazy";
         img.style.flexGrow = String(im.ar); // 宽度按宽高比分配 → 不裁切不变形
         img.style.flexBasis = "0";
         rowEl.appendChild(img);
