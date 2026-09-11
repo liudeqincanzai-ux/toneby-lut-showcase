@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-09-11T03:40:58.556Z）
+// 本文件由内容编辑器同步生成（2026-09-11T11:34:33.060Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -282,7 +282,9 @@ const GROUPS = [
           "photos/lutcam-1788857975333-edited.jpg",
           "photos/lutcam-1788857993335-edited.jpg",
           "photos/lutcam-1788858008672-edited.jpg",
-          "photos/lutcam-1788858026293-edited.jpg"
+          "photos/lutcam-1788858026293-edited.jpg",
+          "photos/Toneby-1789115524519-5207T-edited.jpg",
+          "photos/Toneby-1789115746190-5207T-edited.jpg"
         ],
         "film": "",
         "note": "",
