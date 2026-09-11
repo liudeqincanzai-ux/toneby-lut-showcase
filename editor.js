@@ -119,8 +119,16 @@
       a.className = "lut-link" + (gi === cur.g && li === cur.l ? " active" : "");
       a.textContent = lut.name;
       a.draggable = true;
-      a.title = "拖动可移动到其他分组或调整顺序";
+      a.title = "拖动=移动/排序；双击=改 LUT 名称";
       a.onclick = function () { cur = { g: gi, l: li }; renderList(); renderEditor(); };
+      a.ondblclick = function () {
+        var n = prompt("修改 LUT 名称", lut.name);
+        if (n && n.trim()) {
+          lut.name = n.trim();
+          saveQuiet(); renderList(); renderEditor();
+          toast("LUT 名称已修改 ✓");
+        }
+      };
       a.ondragstart = function (e) {
         dragSrc = { type: "lut", gi: gi, li: li };
         e.dataTransfer.effectAllowed = "move";
@@ -323,6 +331,11 @@
       h.textContent = lut.name;
       editorEl.appendChild(h);
 
+      editorEl.appendChild(field("LUT 名称", "左侧列表与数据里的名称；也可在左侧双击改名", lut.name, function (v) {
+        lut.name = v;
+        h.textContent = v || lut.name;
+        renderList();
+      }));
       editorEl.appendChild(field("标题介绍", "展示块顶部的大标题", lut.title, function (v) { lut.title = v; }, 2));
       editorEl.appendChild(field("文字描述", "标题下方的介绍文字", lut.desc, function (v) { lut.desc = v; }, 4));
       editorEl.appendChild(field("使用的胶片", "显示在图片正下方居中；留空则不显示", lut.film, function (v) { lut.film = v; }));
