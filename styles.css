@@ -109,7 +109,7 @@ html, body {
   padding: 18px 18px 6px;
   font-size: 12px;
   letter-spacing: 1px;
-  color: #ff7eb3;                 /* 粉色分组标题 */
+  color: #8a8a8a;                 /* 灰阶分组标题 */
 }
 .side-lut {
   display: block;
@@ -124,11 +124,11 @@ html, body {
   cursor: pointer;
   font-family: inherit;
 }
-.side-lut:hover { background: #1a1a1a; color: #fff; }
+.side-lut:hover { background: #1c1c1c; color: #ffffff; }
 .side-lut.active {
-  color: #ff7eb3;                 /* 粉色高亮当前分组 */
-  border-left-color: #ff7eb3;
-  background: rgba(255, 126, 179, 0.08);
+  color: #ffffff;                 /* 黑白灰：白色文字 + 浅灰左边框区分当前分组 */
+  border-left-color: #d9d9d9;
+  background: #1f1f1f;
 }
 
 /* ---------- LUT 展示块（仿博客文章式） ---------- */
