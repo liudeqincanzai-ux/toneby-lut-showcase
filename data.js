@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-09-11T03:01:35.327Z）
+// 本文件由内容编辑器同步生成（2026-09-11T03:19:17.596Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -10,13 +10,16 @@ const GROUPS = [
     "name": "过期胶卷 / GRF",
     "luts": [
       {
-        "name": "过期胶卷",
-        "title": "过期胶卷——褪色与灰雾的岁月感",
-        "desc": "模拟过期胶卷的褪色发灰、偏色与低饱和质感，适合想要时光感的街拍与人像。示例文案，可在编辑器里随意修改。",
+        "name": "GRFⅡ",
+        "title": "GRFⅡ——理光负片第二代",
+        "desc": "理光负片第二代配方，示例文案，可在编辑器里修改。",
         "images": [
-          "covers/lut_icon_01.jpg",
-          "covers/lut_icon_02.jpg",
-          "covers/lut_icon_03.jpg"
+          "photos/lutcam-1788856076571-edited.jpg",
+          "photos/Toneby-1789032073631-GRF_Ⅱ-edited.jpg",
+          "photos/Toneby-1789032908630-GRF_Ⅱ-edited.jpg",
+          "photos/Toneby-1789032991981-GRF_Ⅱ-edited.jpg",
+          "photos/Toneby-1789033132573-GRF_Ⅱ-edited.jpg",
+          "photos/Toneby-1789033317030-GRF_Ⅱ-edited.jpg"
         ],
         "film": "",
         "note": "",
@@ -95,6 +98,19 @@ const GROUPS = [
           "covers/lut_icon_06.jpg",
           "covers/lut_icon_05.jpg",
           "covers/lut_icon_02.jpg"
+        ],
+        "film": "",
+        "note": "",
+        "credits": []
+      },
+      {
+        "name": "过期胶卷",
+        "title": "过期胶卷——褪色与灰雾的岁月感",
+        "desc": "模拟过期胶卷的褪色发灰、偏色与低饱和质感，适合想要时光感的街拍与人像。示例文案，可在编辑器里随意修改。",
+        "images": [
+          "covers/lut_icon_01.jpg",
+          "covers/lut_icon_02.jpg",
+          "covers/lut_icon_03.jpg"
         ],
         "film": "",
         "note": "",
@@ -229,22 +245,6 @@ const GROUPS = [
   {
     "name": "GRFⅡ / CLASSIC FILM",
     "luts": [
-      {
-        "name": "GRFⅡ",
-        "title": "GRFⅡ——理光负片第二代",
-        "desc": "理光负片第二代配方，示例文案，可在编辑器里修改。",
-        "images": [
-          "photos/lutcam-1788856076571-edited.jpg",
-          "photos/Toneby-1789032073631-GRF_Ⅱ-edited.jpg",
-          "photos/Toneby-1789032908630-GRF_Ⅱ-edited.jpg",
-          "photos/Toneby-1789032991981-GRF_Ⅱ-edited.jpg",
-          "photos/Toneby-1789033132573-GRF_Ⅱ-edited.jpg",
-          "photos/Toneby-1789033317030-GRF_Ⅱ-edited.jpg"
-        ],
-        "film": "",
-        "note": "",
-        "credits": []
-      },
       {
         "name": "CLASSIC FILM",
         "title": "CLASSIC FILM（组二）",
