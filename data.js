@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-09-11T11:34:33.060Z）
+// 本文件由内容编辑器同步生成（2026-09-11T11:36:16.861Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -406,9 +406,8 @@ const GROUPS = [
         "title": "D65——标准日光 6500K",
         "desc": "标准日光 6500K 色温基准的调色，示例文案，可在编辑器里修改。",
         "images": [
-          "covers/lut_icon_24.jpg",
-          "covers/lut_icon_23.jpg",
-          "covers/lut_icon_10.jpg"
+          "photos/Toneby-1789115996829-D65T-edited.jpg",
+          "photos/Toneby-1789115966522-D65T-edited.jpg"
         ],
         "film": "",
         "note": "",
