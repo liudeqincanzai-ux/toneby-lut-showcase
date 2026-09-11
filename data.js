@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-09-11T11:36:16.861Z）
+// 本文件由内容编辑器同步生成（2026-09-11T11:36:48.071Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -30,9 +30,8 @@ const GROUPS = [
         "title": "GRF——理光负片风格",
         "desc": "理光 GR 系列负片质感的调色方向，示例文案，可在编辑器里修改。",
         "images": [
-          "covers/lut_icon_15.jpg",
-          "covers/lut_icon_01.jpg",
-          "covers/lut_icon_18.jpg"
+          "photos/Toneby-1789115890763-GRF-edited.jpg",
+          "photos/Toneby-1789115818379-GRF-edited.jpg"
         ],
         "film": "",
         "note": "",
