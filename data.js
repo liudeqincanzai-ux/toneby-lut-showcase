@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-09-11T03:40:58.556Z）
+// 本文件由内容编辑器同步生成（2026-09-11T03:19:17.596Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -7,7 +7,7 @@ const SITE = {
 
 const GROUPS = [
   {
-    "name": "GRF",
+    "name": "过期胶卷 / GRF",
     "luts": [
       {
         "name": "GRFⅡ",
@@ -41,7 +41,7 @@ const GROUPS = [
     ]
   },
   {
-    "name": "FILM",
+    "name": "FILM LIKE / FILM LIKEⅡ",
     "luts": [
       {
         "name": "FILM LIKE",
@@ -60,7 +60,7 @@ const GROUPS = [
         "credits": []
       },
       {
-        "name": "FILM LIKE Ⅱ",
+        "name": "FILM LIKEⅡ",
         "title": "FILM LIKEⅡ——更柔和的第二代配方",
         "desc": "在第一代基础上更柔和、更通透的第二代配方，示例文案，可在编辑器里修改。",
         "images": [
@@ -71,24 +71,11 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": []
-      },
-      {
-        "name": "FILM CLASSIC",
-        "title": "CLASSIC FILM——经典胶片风格",
-        "desc": "厚重的经典胶片风格，示例文案，可在编辑器里修改。",
-        "images": [
-          "covers/lut_icon_07.jpg",
-          "covers/lut_icon_08.jpg",
-          "covers/lut_icon_09.jpg"
-        ],
-        "film": "",
-        "note": "",
-        "credits": []
       }
     ]
   },
   {
-    "name": "仿胶卷",
+    "name": "仿胶卷 / 仿胶卷Y",
     "luts": [
       {
         "name": "仿胶卷",
@@ -104,7 +91,7 @@ const GROUPS = [
         "credits": []
       },
       {
-        "name": "仿胶卷 Ⅱ",
+        "name": "仿胶卷Y",
         "title": "仿胶卷Y——偏黄的暖调版本",
         "desc": "仿胶片的偏黄暖调版本，示例文案，可在编辑器里修改。",
         "images": [
@@ -132,23 +119,23 @@ const GROUPS = [
     ]
   },
   {
-    "name": "CLASSIC FILM",
+    "name": "CLASSIC FILM / CC",
     "luts": [
       {
-        "name": "C200T",
-        "title": "Classic F200——富士经典 F250 风格",
-        "desc": "富士经典 F250 胶片风格，示例文案，可在编辑器里修改。",
+        "name": "CLASSIC FILM",
+        "title": "CLASSIC FILM——经典胶片风格",
+        "desc": "厚重的经典胶片风格，示例文案，可在编辑器里修改。",
         "images": [
-          "covers/lut_icon_25.jpg",
-          "covers/lut_icon_26.jpg",
-          "covers/lut_icon_11.jpg"
+          "covers/lut_icon_07.jpg",
+          "covers/lut_icon_08.jpg",
+          "covers/lut_icon_09.jpg"
         ],
         "film": "",
         "note": "",
         "credits": []
       },
       {
-        "name": "C100T",
+        "name": "CC",
         "title": "CC——富士 CC 校色风格",
         "desc": "富士 CC 校色风格，示例文案，可在编辑器里修改。",
         "images": [
@@ -163,10 +150,10 @@ const GROUPS = [
     ]
   },
   {
-    "name": "G200T / G200T Ⅱ",
+    "name": "Gold200 / Gold200H",
     "luts": [
       {
-        "name": "G200T",
+        "name": "Gold200",
         "title": "Gold200——金色 200 胶片色调",
         "desc": "金色 200 的暖调胶片发色，示例文案，可在编辑器里修改。",
         "images": [
@@ -179,7 +166,7 @@ const GROUPS = [
         "credits": []
       },
       {
-        "name": "G200T Ⅱ",
+        "name": "Gold200H",
         "title": "Gold200H——高光加强版",
         "desc": "Gold200 的高光加强版本，示例文案，可在编辑器里修改。",
         "images": [
@@ -194,7 +181,7 @@ const GROUPS = [
     ]
   },
   {
-    "name": "CLASSIC",
+    "name": "CLASSIC FEATURE / CLASSIC NEGATIVE",
     "luts": [
       {
         "name": "CLASSIC FEATURE",
@@ -204,19 +191,6 @@ const GROUPS = [
           "covers/lut_icon_10.jpg",
           "covers/lut_icon_11.jpg",
           "covers/lut_icon_12.jpg"
-        ],
-        "film": "",
-        "note": "",
-        "credits": []
-      },
-      {
-        "name": "CLASSIC FILM",
-        "title": "CLASSIC FILM（组二）",
-        "desc": "与 CLASSIC FILM 相关的展示块，示例文案，可在编辑器里修改。",
-        "images": [
-          "covers/lut_icon_07.jpg",
-          "covers/lut_icon_10.jpg",
-          "covers/lut_icon_11.jpg"
         ],
         "film": "",
         "note": "",
@@ -238,10 +212,10 @@ const GROUPS = [
     ]
   },
   {
-    "name": "5219T / 5219T Ⅱ",
+    "name": "5219 / 5219S",
     "luts": [
       {
-        "name": "5219T",
+        "name": "5219",
         "title": "5219——柯达 Vision3 5219",
         "desc": "柯达 Vision3 5219 电影胶片发色，示例文案，可在编辑器里修改。",
         "images": [
@@ -254,7 +228,7 @@ const GROUPS = [
         "credits": []
       },
       {
-        "name": "5219T Ⅱ",
+        "name": "5219S",
         "title": "5219S——5219 柔和版",
         "desc": "5219 的柔和版本，示例文案，可在编辑器里修改。",
         "images": [
@@ -269,20 +243,16 @@ const GROUPS = [
     ]
   },
   {
-    "name": "5207T",
+    "name": "GRFⅡ / CLASSIC FILM",
     "luts": [
       {
-        "name": "5207T",
-        "title": "5207T",
-        "desc": "5207T 电影胶片发色，示例文案，可在编辑器里修改。",
+        "name": "CLASSIC FILM",
+        "title": "CLASSIC FILM（组二）",
+        "desc": "与 CLASSIC FILM 相关的展示块，示例文案，可在编辑器里修改。",
         "images": [
-          "photos/lutcam-1788857796992-edited.jpg",
-          "photos/lutcam-1788857800894-edited.jpg",
-          "photos/lutcam-1788857961450-edited.jpg",
-          "photos/lutcam-1788857975333-edited.jpg",
-          "photos/lutcam-1788857993335-edited.jpg",
-          "photos/lutcam-1788858008672-edited.jpg",
-          "photos/lutcam-1788858026293-edited.jpg"
+          "covers/lut_icon_07.jpg",
+          "covers/lut_icon_10.jpg",
+          "covers/lut_icon_11.jpg"
         ],
         "film": "",
         "note": "",
@@ -322,10 +292,10 @@ const GROUPS = [
     ]
   },
   {
-    "name": "GS800T / GS 3T",
+    "name": "GS S800 / GS P3",
     "luts": [
       {
-        "name": "GS800T",
+        "name": "GS S800",
         "title": "GS S800——灰度 S800",
         "desc": "灰度 S800 风格，示例文案，可在编辑器里修改。",
         "images": [
@@ -338,7 +308,7 @@ const GROUPS = [
         "credits": []
       },
       {
-        "name": "GS 3T",
+        "name": "GS P3",
         "title": "GS P3——灰度 P3",
         "desc": "灰度 P3 风格，示例文案，可在编辑器里修改。",
         "images": [
@@ -369,7 +339,7 @@ const GROUPS = [
         "credits": []
       },
       {
-        "name": "MOVIE Ⅱ",
+        "name": "MOVIEⅡ",
         "title": "MOVIEⅡ——电影感第二代",
         "desc": "电影感第二代配方，示例文案，可在编辑器里修改。",
         "images": [
@@ -384,10 +354,10 @@ const GROUPS = [
     ]
   },
   {
-    "name": "D55T / D65T",
+    "name": "D55 / D65",
     "luts": [
       {
-        "name": "D55T",
+        "name": "D55",
         "title": "D55——日光 5500K",
         "desc": "日光 5500K 色温基准的调色，示例文案，可在编辑器里修改。",
         "images": [
@@ -400,13 +370,48 @@ const GROUPS = [
         "credits": []
       },
       {
-        "name": "D65T",
+        "name": "D65",
         "title": "D65——标准日光 6500K",
         "desc": "标准日光 6500K 色温基准的调色，示例文案，可在编辑器里修改。",
         "images": [
           "covers/lut_icon_24.jpg",
           "covers/lut_icon_23.jpg",
           "covers/lut_icon_10.jpg"
+        ],
+        "film": "",
+        "note": "",
+        "credits": []
+      }
+    ]
+  },
+  {
+    "name": "Classic F200 / 5207",
+    "luts": [
+      {
+        "name": "Classic F200",
+        "title": "Classic F200——富士经典 F250 风格",
+        "desc": "富士经典 F250 胶片风格，示例文案，可在编辑器里修改。",
+        "images": [
+          "covers/lut_icon_25.jpg",
+          "covers/lut_icon_26.jpg",
+          "covers/lut_icon_11.jpg"
+        ],
+        "film": "",
+        "note": "",
+        "credits": []
+      },
+      {
+        "name": "5207",
+        "title": "5207T",
+        "desc": "5207T 电影胶片发色，示例文案，可在编辑器里修改。",
+        "images": [
+          "photos/lutcam-1788857796992-edited.jpg",
+          "photos/lutcam-1788857800894-edited.jpg",
+          "photos/lutcam-1788857961450-edited.jpg",
+          "photos/lutcam-1788857975333-edited.jpg",
+          "photos/lutcam-1788857993335-edited.jpg",
+          "photos/lutcam-1788858008672-edited.jpg",
+          "photos/lutcam-1788858026293-edited.jpg"
         ],
         "film": "",
         "note": "",

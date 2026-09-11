@@ -1,9 +1,11 @@
-// Toneby LUT 展示站 · 逻辑：下拉选组 → 渲染该组每个 LUT 的展示块（上→下）
-// 照片排版：两端对齐画廊（justified）——图片保持原始比例、不裁切不变形，
-//           每行精确铺满整个矩形宽度，固定 8px 间距，几张图都无空缺。
+// Toneby LUT 展示站 · 逻辑
+// 顶部菜单按钮（一长一短两横杠）→ 侧边抽屉展示全部分组与 LUT（粉色高亮）
+// 照片排版：两端对齐画廊——图片保持原始比例、不裁切不变形，每行铺满矩形宽度
 (function () {
-  var picker = document.getElementById("groupPicker");
   var page = document.getElementById("page");
+  var sidebar = document.getElementById("sidebar");
+  var overlay = document.getElementById("overlay");
+  var menuBtn = document.getElementById("menuBtn");
   var GAP = 8; // 图片固定间距
 
   // 数据来源：编辑器保存过的本地版本优先，否则用 data.js 默认
@@ -13,7 +15,7 @@
   var site = (saved && saved.site) ? saved.site
     : (typeof SITE !== "undefined" ? SITE : { title: "Toneby LUT Showcase", subtitle: "Explore the colors of Toneby." });
 
-  // 渲染顶部大标题 + 小字（编辑器里可改）
+  // 顶部大标题 + 小字（编辑器里可改）
   var titleEl = document.getElementById("siteTitle");
   var subEl = document.getElementById("siteSubtitle");
   if (site.title && String(site.title).trim()) titleEl.textContent = site.title;
@@ -22,13 +24,44 @@
   else subEl.style.display = "none";
   if (site.title || site.subtitle) document.title = site.title || document.title;
 
-  // 填充下拉选项
-  DATA.forEach(function (g, i) {
-    var opt = document.createElement("option");
-    opt.value = String(i);
-    opt.textContent = g.name;
-    picker.appendChild(opt);
-  });
+  var curGi = 0;
+
+  // ---------- 侧边抽屉 ----------
+  function buildSidebar(activeGi) {
+    sidebar.textContent = "";
+    var head = document.createElement("div");
+    head.className = "sidebar-head";
+    var t = document.createElement("span");
+    t.className = "t";
+    t.textContent = "LUT 分组";
+    var x = document.createElement("button");
+    x.className = "sidebar-close";
+    x.textContent = "×";
+    x.setAttribute("aria-label", "关闭");
+    x.onclick = closeDrawer;
+    head.appendChild(t);
+    head.appendChild(x);
+    sidebar.appendChild(head);
+
+    DATA.forEach(function (g, gi) {
+      var label = document.createElement("div");
+      label.className = "side-group-label";
+      label.textContent = g.name;
+      sidebar.appendChild(label);
+      g.luts.forEach(function (lut, li) {
+        var b = document.createElement("button");
+        b.className = "side-lut" + (gi === activeGi ? " active" : "");
+        b.textContent = lut.name;
+        b.onclick = function () { selectGroup(gi, li); };
+        sidebar.appendChild(b);
+      });
+    });
+  }
+
+  function openDrawer() { buildSidebar(curGi); sidebar.classList.add("open"); overlay.classList.add("show"); }
+  function closeDrawer() { sidebar.classList.remove("open"); overlay.classList.remove("show"); }
+  menuBtn.addEventListener("click", openDrawer);
+  overlay.addEventListener("click", closeDrawer);
 
   // 有内容才创建节点（不填不显示）
   function fillText(parent, className, text) {
@@ -40,7 +73,6 @@
   }
 
   // ---------- 两端对齐画廊 ----------
-  // 预加载图片拿原始宽高比（不裁切不变形的前提）
   function loadAll(srcs) {
     return Promise.all(srcs.map(function (src) {
       return new Promise(function (resolve) {
@@ -54,8 +86,7 @@
     }));
   }
 
-  // 分行：动态规划全局最优——所有行的高度都尽可能接近目标高，行高差最小化
-  // （每行仍按 Σ宽高比 精确铺满宽度，末行同样参与优化，无空缺）
+  // 动态规划全局最优分行：所有行高尽可能接近目标高，行高差最小
   function splitRows(items, W, targetH) {
     var n = items.length;
     var pre = [0];
@@ -69,13 +100,13 @@
         var cnt = i - j;
         var sum = pre[i] - pre[j];
         var h = (W - GAP * (cnt - 1)) / sum;
-        if (h < targetH * 0.5) continue; // 单行图太多导致行高过矮，不划算
+        if (h < targetH * 0.5) continue;
         var cost = dp[j] + (h - targetH) * (h - targetH);
         if (cost < dp[i]) { dp[i] = cost; from[i] = j; }
       }
     }
     var rows = [], i2 = n;
-    if (dp[n] >= INF) { // 兜底（理论不会走到）：逐图一行
+    if (dp[n] >= INF) {
       for (var q = 0; q < n; q++) rows.push([items[q]]);
       return rows;
     }
@@ -87,7 +118,6 @@
     return rows;
   }
 
-  // 按行渲染：每行高度 = 行内图片按原始比例恰好铺满宽度的高度 → 无空缺
   function renderRows(container, items, W) {
     container.textContent = "";
     var targetH = W < 480 ? 110 : 150;
@@ -102,7 +132,7 @@
         var img = document.createElement("img");
         img.src = im.src;
         img.alt = "";
-        img.style.flexGrow = String(im.ar); // 宽度按宽高比精确分配 → 比例原样保留
+        img.style.flexGrow = String(im.ar); // 宽度按宽高比分配 → 不裁切不变形
         img.style.flexBasis = "0";
         rowEl.appendChild(img);
       });
@@ -110,7 +140,7 @@
     });
   }
 
-  var photoBlocks = []; // {wrap, items} 供窗口缩放时重排
+  var photoBlocks = [];
 
   function renderPhotos(post, lut) {
     if (!lut.images || !lut.images.length) return;
@@ -124,7 +154,6 @@
     });
   }
 
-  // 窗口尺寸变化时按新宽度重排
   var resizeTimer = null;
   window.addEventListener("resize", function () {
     clearTimeout(resizeTimer);
@@ -136,16 +165,15 @@
     }, 150);
   });
 
-  function renderPost(lut) {
+  function renderPost(lut, gi, li) {
     var post = document.createElement("section");
     post.className = "lut-post";
+    post.id = "post-" + gi + "-" + li; // 侧边栏点 LUT 跳转锚点
 
     fillText(post, "lut-title", lut.title);
     fillText(post, "lut-desc", lut.desc);
-
     renderPhotos(post, lut);
 
-    // 图片正下方居中：胶片 + 作者介绍（任一填写才显示整个块）
     var cap = document.createElement("div");
     cap.className = "photo-caption";
     if (lut.film && String(lut.film).trim()) {
@@ -162,7 +190,6 @@
     }
     if (cap.childNodes.length) post.appendChild(cap);
 
-    // 可选补充信息行（如 导演/摄影指导）
     if (lut.credits && lut.credits.length) {
       var credits = document.createElement("div");
       credits.className = "credits";
@@ -179,21 +206,31 @@
     return post;
   }
 
+  var pendingScroll = -1; // 渲染后要滚动到的 LUT 索引（-1 = 回到顶部）
+
   function render(index) {
     var g = DATA[index];
     if (!g) return;
-    picker.value = String(index);
-    page.textContent = ""; // 清空
+    curGi = index;
+    page.textContent = "";
     photoBlocks = [];
-    g.luts.forEach(function (lut) {
-      page.appendChild(renderPost(lut));
+    g.luts.forEach(function (lut, li) {
+      page.appendChild(renderPost(lut, index, li));
     });
+    if (pendingScroll >= 0) {
+      var el = document.getElementById("post-" + index + "-" + pendingScroll);
+      pendingScroll = -1;
+      if (el) { el.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+    }
     window.scrollTo(0, 0);
   }
 
-  picker.addEventListener("change", function () {
-    location.hash = "g" + picker.value;
-  });
+  function selectGroup(gi, lutIndex) {
+    closeDrawer();
+    pendingScroll = (typeof lutIndex === "number") ? lutIndex : -1;
+    if (("#g" + gi) === location.hash) render(gi);
+    else location.hash = "g" + gi;
+  }
 
   // 支持 #gN 直达（app WebView 返回键可正常回退）
   function fromHash() {

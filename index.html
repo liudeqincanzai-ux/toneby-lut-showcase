@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Toneby LUT Showcase</title>
-  <link rel="stylesheet" href="styles.css?v=20260911b">
+  <link rel="stylesheet" href="styles.css?v=20260911e">
 </head>
 <body>
   <!-- 顶部大标题 + 小字（可在编辑器里随时修改） -->
@@ -13,18 +13,20 @@
     <p id="siteSubtitle">Explore the colors of Toneby.</p>
   </section>
 
-  <!-- 顶部：选择全部 LUT 的下拉部件（访客视角，无编辑入口） -->
-  <header class="topbar">
-    <div class="picker-wrap">
-      <select id="groupPicker" aria-label="选择 LUT 分组"></select>
-      <span class="picker-arrow" aria-hidden="true">▾</span>
-    </div>
-  </header>
+  <!-- 左上角：一长一短两条横杠的圆形菜单按钮（点开侧边栏） -->
+  <button id="menuBtn" class="menu-btn" aria-label="打开 LUT 分组列表">
+    <span class="menu-bar menu-bar-long"></span>
+    <span class="menu-bar menu-bar-short"></span>
+  </button>
+
+  <!-- 侧边抽屉：分组 + LUT 列表 -->
+  <div id="overlay" class="overlay"></div>
+  <aside id="sidebar" class="sidebar" aria-label="LUT 分组列表"></aside>
 
   <!-- 当前分组的 LUT 列表：一格一个，从上往下 -->
   <main id="page"></main>
 
-  <script src="data.js?v=20260911b"></script>
-  <script src="main.js?v=20260911b"></script>
+  <script src="data.js?v=20260911e"></script>
+  <script src="main.js?v=20260911e"></script>
 </body>
 </html>

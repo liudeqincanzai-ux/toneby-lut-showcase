@@ -28,46 +28,107 @@ html, body {
   letter-spacing: 0.3px;
 }
 
-/* ---------- 顶部下拉选择器 ---------- */
-.topbar {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: #161616;
-  padding: 14px 16px 10px;
-  display: flex;
-  justify-content: center;
-}
-
-.picker-wrap {
-  position: relative;
-  width: min(320px, 86vw);
-}
-
-.picker-wrap select {
-  width: 100%;
-  appearance: none;
-  -webkit-appearance: none;
-  background: #1f1f1f;
-  color: #e8e8e8;
-  border: 1px solid #333;
-  border-radius: 8px;
-  padding: 10px 36px 10px 14px;
-  font-size: 15px;
+/* ---------- 左上角圆形菜单按钮（一长一短两条横杠） ---------- */
+.menu-btn {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 30;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
   cursor: pointer;
-  outline: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 0 15px;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.55);
+  transition: transform 0.15s;
 }
+.menu-btn:active { transform: scale(0.94); }
+.menu-bar {
+  display: block;
+  height: 2.5px;
+  border-radius: 2px;
+  background: #2b2b2b;
+}
+.menu-bar-long { width: 22px; }
+.menu-bar-short { width: 13px; }
 
-.picker-wrap select:focus { border-color: #4a9edd; }
-
-.picker-arrow {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #888;
-  font-size: 13px;
+/* ---------- 侧边抽屉：分组 + LUT 列表 ---------- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
   pointer-events: none;
+  transition: opacity 0.28s;
+  z-index: 50;
+}
+.overlay.show { opacity: 1; pointer-events: auto; }
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: min(300px, 82vw);
+  background: #111111;
+  transform: translateX(-105%);
+  transition: transform 0.28s ease;
+  z-index: 60;
+  overflow-y: auto;
+  padding: 16px 0 30px;
+}
+.sidebar.open { transform: none; }
+
+.sidebar-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 18px 14px;
+  border-bottom: 1px solid #232323;
+}
+.sidebar-head .t { color: #f0f0f0; font-weight: 600; font-size: 15px; }
+.sidebar-close {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+}
+.sidebar-close:hover { color: #ff7eb3; }
+
+.side-group-label {
+  padding: 18px 18px 6px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #ff7eb3;                 /* 粉色分组标题 */
+}
+.side-lut {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-left: 3px solid transparent;
+  padding: 11px 18px;
+  font-size: 14px;
+  color: #cfcfcf;
+  cursor: pointer;
+  font-family: inherit;
+}
+.side-lut:hover { background: #1a1a1a; color: #fff; }
+.side-lut.active {
+  color: #ff7eb3;                 /* 粉色高亮当前分组 */
+  border-left-color: #ff7eb3;
+  background: rgba(255, 126, 179, 0.08);
 }
 
 /* ---------- LUT 展示块（仿博客文章式） ---------- */
