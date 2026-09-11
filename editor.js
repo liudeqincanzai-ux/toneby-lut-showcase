@@ -300,10 +300,11 @@
       steps.className = "gate-hint";
       steps.style.textAlign = "left";
       steps.innerHTML = "为了让你点一下按钮就能把内容发布到网站，需要给编辑器一把「只管这一个仓库」的钥匙：<br>"
-        + "1. 点下面按钮打开 GitHub 授权页（已帮你预选好仓库和权限）<br>"
-        + "2. 拉到页面最底，点绿色的 Generate token<br>"
-        + "3. 复制生成的串（ghp_ 或 github_pat_ 开头），粘贴到下面输入框<br>"
-        + "4. 点「保存并同步」，以后就一直一键发布了";
+        + "1. 点下面按钮打开 GitHub 授权页（名称、账号、Contents 权限已预填好）<br>"
+        + "2. 在「存储库访问」选「仅选择存储库」→ 勾选 toneby-lut-showcase<br>"
+        + "3. 拉到页面最底，点绿色的 Generate token<br>"
+        + "4. 复制生成的串（github_pat_ 开头），粘贴到下面输入框<br>"
+        + "5. 点「保存并同步」，以后就一直一键发布了";
       box.appendChild(steps);
 
       var linkBtn = document.createElement("button");
@@ -311,8 +312,9 @@
       linkBtn.style.cssText = "width:100%;margin-bottom:12px;";
       linkBtn.textContent = "① 打开 GitHub 授权页（新窗口）";
       linkBtn.onclick = function () {
+        // target_name=资源所有者(账号名)；GitHub 不支持用 URL 预选具体仓库，需在页面「存储库访问」手动勾选
         window.open("https://github.com/settings/personal-access-tokens/new"
-          + "?name=Toneby%20LUT%20editor&target_name=toneby-lut-showcase&contents=write", "_blank");
+          + "?name=Toneby%20LUT%20editor&target_name=liudeqincanzai-ux&contents=write", "_blank");
       };
       box.appendChild(linkBtn);
 
