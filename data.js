@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-09-11T02:30:49.781Z）
+// 本文件由内容编辑器同步生成（2026-09-11T03:01:35.327Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -234,9 +234,12 @@ const GROUPS = [
         "title": "GRFⅡ——理光负片第二代",
         "desc": "理光负片第二代配方，示例文案，可在编辑器里修改。",
         "images": [
-          "covers/lut_icon_18.jpg",
-          "covers/lut_icon_15.jpg",
-          "covers/lut_icon_01.jpg"
+          "photos/lutcam-1788856076571-edited.jpg",
+          "photos/Toneby-1789032073631-GRF_Ⅱ-edited.jpg",
+          "photos/Toneby-1789032908630-GRF_Ⅱ-edited.jpg",
+          "photos/Toneby-1789032991981-GRF_Ⅱ-edited.jpg",
+          "photos/Toneby-1789033132573-GRF_Ⅱ-edited.jpg",
+          "photos/Toneby-1789033317030-GRF_Ⅱ-edited.jpg"
         ],
         "film": "",
         "note": "",
