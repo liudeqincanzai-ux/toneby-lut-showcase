@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-09-11T03:33:13.502Z）
+// 本文件由内容编辑器同步生成（2026-09-11T03:40:58.556Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -7,7 +7,7 @@ const SITE = {
 
 const GROUPS = [
   {
-    "name": "过期胶卷 / GRF",
+    "name": "GRF",
     "luts": [
       {
         "name": "GRFⅡ",
@@ -41,7 +41,7 @@ const GROUPS = [
     ]
   },
   {
-    "name": "FILM LIKE / FILM LIKEⅡ",
+    "name": "FILM",
     "luts": [
       {
         "name": "FILM LIKE",
@@ -88,7 +88,7 @@ const GROUPS = [
     ]
   },
   {
-    "name": "仿胶卷 / 仿胶卷Y",
+    "name": "仿胶卷",
     "luts": [
       {
         "name": "仿胶卷",
@@ -132,7 +132,7 @@ const GROUPS = [
     ]
   },
   {
-    "name": "CLASSIC FILM / CC",
+    "name": "CLASSIC FILM",
     "luts": [
       {
         "name": "C200T",
@@ -163,7 +163,7 @@ const GROUPS = [
     ]
   },
   {
-    "name": "Gold200 / Gold200H",
+    "name": "G200T / G200T Ⅱ",
     "luts": [
       {
         "name": "G200T",
@@ -194,7 +194,7 @@ const GROUPS = [
     ]
   },
   {
-    "name": "CLASSIC FEATURE / CLASSIC NEGATIVE",
+    "name": "CLASSIC",
     "luts": [
       {
         "name": "CLASSIC FEATURE",
@@ -238,7 +238,7 @@ const GROUPS = [
     ]
   },
   {
-    "name": "5219 / 5219S",
+    "name": "5219T / 5219T Ⅱ",
     "luts": [
       {
         "name": "5219T",
