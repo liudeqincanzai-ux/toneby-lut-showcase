@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-09-11T11:38:36.592Z）
+// 本文件由内容编辑器同步生成（2026-09-11T11:42:03.434Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -182,9 +182,8 @@ const GROUPS = [
         "title": "Gold200H——高光加强版",
         "desc": "Gold200 的高光加强版本，示例文案，可在编辑器里修改。",
         "images": [
-          "covers/lut_icon_08.jpg",
-          "covers/lut_icon_09.jpg",
-          "covers/lut_icon_11.jpg"
+          "photos/Toneby-1789116550880-G200T_Ⅱ-edited.jpg",
+          "photos/Toneby-1789116580648-G200T_Ⅱ-edited.jpg"
         ],
         "film": "",
         "note": "",
