@@ -7,6 +7,7 @@
   var overlay = document.getElementById("overlay");
   var menuBtn = document.getElementById("menuBtn");
   var GAP = 8; // 图片固定间距
+  var IMG_V = "?v=20260911h"; // 图片缓存版本：换图/修图后递增
 
   // 数据来源：编辑器保存过的本地版本优先，否则用 data.js 默认
   var saved = null;
@@ -81,7 +82,7 @@
           resolve({ src: src, ar: Math.max(0.25, im.naturalWidth / Math.max(1, im.naturalHeight)) });
         };
         im.onerror = function () { resolve({ src: src, ar: 1.5, broken: true }); };
-        im.src = src;
+        im.src = src + IMG_V;
       });
     }));
   }
@@ -130,7 +131,7 @@
       rowEl.style.height = h + "px";
       row.forEach(function (im) {
         var img = document.createElement("img");
-        img.src = im.src;
+        img.src = im.src + IMG_V;
         img.alt = "";
         img.loading = "lazy";
         img.style.flexGrow = String(im.ar); // 宽度按宽高比分配 → 不裁切不变形
