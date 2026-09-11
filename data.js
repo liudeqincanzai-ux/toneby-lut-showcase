@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-09-11T11:42:03.434Z）
+// 本文件由内容编辑器同步生成（2026-09-11T11:44:36.415Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -366,9 +366,17 @@ const GROUPS = [
         "title": "MOVIE——电影感调色",
         "desc": "电影感的青橙调色方向，示例文案，可在编辑器里修改。",
         "images": [
-          "covers/lut_icon_21.jpg",
-          "covers/lut_icon_22.jpg",
-          "covers/lut_icon_14.jpg"
+          "photos/Toneby-1789117050811-MOVIE-edited.jpg",
+          "photos/Toneby-1789116720113-MOVIE-edited.jpg",
+          "photos/Toneby-1789116702484-MOVIE-edited.jpg",
+          "photos/Toneby-1789116861938-MOVIE-edited.jpg",
+          "photos/Toneby-1789116627119-MOVIE-edited.jpg",
+          "photos/Toneby-1789116801827-MOVIE-edited.jpg",
+          "photos/Toneby-1789117629098-MOVIE-edited.jpg",
+          "photos/Toneby-1789117005686-MOVIE-edited.jpg",
+          "photos/Toneby-1789116989247-MOVIE-edited.jpg",
+          "photos/Toneby-1789116639430-MOVIE-edited.jpg",
+          "photos/Toneby-1789116649743-MOVIE-edited.jpg"
         ],
         "film": "",
         "note": "",
