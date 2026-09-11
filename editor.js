@@ -100,7 +100,141 @@
       try { localStorage.setItem(SAVE_KEY, JSON.stringify({ site: SITE_DATA, groups: DATA })); } catch (e) {}
     }
 
-    // ---------- 左侧列表 ----------
+    // ---------- 左侧列表（支持拖拽分组） ----------
+    var dragSrc = null; // {type:'lut',gi,li} 或 {type:'group',gi}
+
+    function moveLut(fgi, fli, tgi, tli, before) {
+      if (fgi === tgi && fli === tli) return;
+      var lut = DATA[fgi].luts.splice(fli, 1)[0];
+      var idx = tli;
+      if (fgi === tgi && fli < tli) idx = tli - 1; // 同组前移后目标索引左移
+      if (!before) idx += 1;
+      DATA[tgi].luts.splice(idx, 0, lut);
+      cur = { g: tgi, l: DATA[tgi].luts.indexOf(lut) };
+      saveQuiet(); renderList(); renderEditor();
+    }
+
+    function makeLutLink(lut, gi, li) {
+      var a = document.createElement("a");
+      a.className = "lut-link" + (gi === cur.g && li === cur.l ? " active" : "");
+      a.textContent = lut.name;
+      a.draggable = true;
+      a.title = "拖动可移动到其他分组或调整顺序";
+      a.onclick = function () { cur = { g: gi, l: li }; renderList(); renderEditor(); };
+      a.ondragstart = function (e) {
+        dragSrc = { type: "lut", gi: gi, li: li };
+        e.dataTransfer.effectAllowed = "move";
+        try { e.dataTransfer.setData("text/plain", "lut"); } catch (x) {}
+        a.classList.add("dragging");
+      };
+      a.ondragend = function () { dragSrc = null; renderList(); };
+      a.ondragover = function (e) {
+        if (!dragSrc) return;
+        e.preventDefault();
+        var r = a.getBoundingClientRect();
+        var before = (e.clientY - r.top) < r.height / 2;
+        a.classList.toggle("drop-before", before);
+        a.classList.toggle("drop-after", !before);
+      };
+      a.ondragleave = function () { a.classList.remove("drop-before", "drop-after"); };
+      a.ondrop = function (e) {
+        e.preventDefault();
+        var r = a.getBoundingClientRect();
+        var before = (e.clientY - r.top) < r.height / 2;
+        a.classList.remove("drop-before", "drop-after");
+        if (dragSrc && dragSrc.type === "lut") moveLut(dragSrc.gi, dragSrc.li, gi, li, before);
+        dragSrc = null;
+      };
+      return a;
+    }
+
+    function makeGroupHead(g, gi) {
+      var head = document.createElement("div");
+      head.className = "group-head droppable";
+      var nameSpan = document.createElement("span");
+      nameSpan.textContent = g.name + (g.luts.length ? "" : "（空分组）");
+      head.appendChild(nameSpan);
+      head.title = "拖动可整组换位；双击可改名；把 LUT 拖到这里=移入该分组";
+      if (!g.luts.length) {
+        var del = document.createElement("span");
+        del.className = "g-del";
+        del.textContent = " ✕删除";
+        del.onclick = function (e) {
+          e.stopPropagation();
+          DATA.splice(gi, 1);
+          cur = { g: 0, l: 0 };
+          saveQuiet(); renderList(); renderEditor();
+          toast("空分组已删除");
+        };
+        head.appendChild(del);
+      }
+      head.ondblclick = function () {
+        var n = prompt("修改分组名称（显示在网站顶部下拉里）", g.name);
+        if (n && n.trim()) { g.name = n.trim(); saveQuiet(); renderList(); }
+      };
+      head.draggable = true;
+      head.ondragstart = function (e) {
+        dragSrc = { type: "group", gi: gi };
+        e.dataTransfer.effectAllowed = "move";
+        try { e.dataTransfer.setData("text/plain", "group"); } catch (x) {}
+        head.classList.add("dragging");
+      };
+      head.ondragend = function () { dragSrc = null; renderList(); };
+      head.ondragover = function (e) {
+        if (!dragSrc) return;
+        e.preventDefault();
+        head.classList.add("drop-into");
+      };
+      head.ondragleave = function () { head.classList.remove("drop-into"); };
+      head.ondrop = function (e) {
+        e.preventDefault();
+        head.classList.remove("drop-into");
+        if (!dragSrc) return;
+        if (dragSrc.type === "lut") {
+          // 拖到分组标题 = 放入该分组末尾
+          var lut = DATA[dragSrc.gi].luts.splice(dragSrc.li, 1)[0];
+          g.luts.push(lut);
+          cur = { g: gi, l: g.luts.length - 1 };
+          saveQuiet(); renderList(); renderEditor();
+        } else if (dragSrc.type === "group" && dragSrc.gi !== gi) {
+          // 整组拖到另一组标题前 = 移动到它前面
+          var grp = DATA.splice(dragSrc.gi, 1)[0];
+          var idx = gi;
+          if (dragSrc.gi < gi) idx = gi - 1;
+          DATA.splice(idx, 0, grp);
+          cur = { g: idx, l: 0 };
+          saveQuiet(); renderList(); renderEditor();
+        }
+        dragSrc = null;
+      };
+      return head;
+    }
+
+    function makeNewGroupZone() {
+      var zone = document.createElement("div");
+      zone.className = "new-group-zone";
+      zone.textContent = "＋ 把 LUT 拖到此处 = 新建分组";
+      zone.ondragover = function (e) {
+        if (!dragSrc || dragSrc.type !== "lut") return;
+        e.preventDefault();
+        zone.classList.add("drop-into");
+      };
+      zone.ondragleave = function () { zone.classList.remove("drop-into"); };
+      zone.ondrop = function (e) {
+        e.preventDefault();
+        zone.classList.remove("drop-into");
+        if (!dragSrc || dragSrc.type !== "lut") return;
+        var lut = DATA[dragSrc.gi].luts.splice(dragSrc.li, 1)[0];
+        var ng = { name: "新分组", luts: [lut] };
+        DATA.push(ng);
+        cur = { g: DATA.length - 1, l: 0 };
+        saveQuiet(); renderList(); renderEditor();
+        toast("已新建分组，双击分组名可改名");
+        dragSrc = null;
+      };
+      return zone;
+    }
+
     function renderList() {
       listEl.textContent = "";
       var siteLink = document.createElement("a");
@@ -109,19 +243,18 @@
       siteLink.onclick = function () { cur = { g: -1, l: 0 }; renderList(); renderEditor(); };
       listEl.appendChild(siteLink);
 
+      var tip = document.createElement("div");
+      tip.className = "group-head";
+      tip.textContent = "拖动 LUT 分组 · 双击组名改名";
+      listEl.appendChild(tip);
+
       DATA.forEach(function (g, gi) {
-        var head = document.createElement("div");
-        head.className = "group-head";
-        head.textContent = g.name;
-        listEl.appendChild(head);
+        listEl.appendChild(makeGroupHead(g, gi));
         g.luts.forEach(function (lut, li) {
-          var a = document.createElement("a");
-          a.className = "lut-link" + (gi === cur.g && li === cur.l ? " active" : "");
-          a.textContent = lut.name;
-          a.onclick = function () { cur = { g: gi, l: li }; renderList(); renderEditor(); };
-          listEl.appendChild(a);
+          listEl.appendChild(makeLutLink(lut, gi, li));
         });
       });
+      listEl.appendChild(makeNewGroupZone());
     }
 
     // ---------- 编辑控件 ----------

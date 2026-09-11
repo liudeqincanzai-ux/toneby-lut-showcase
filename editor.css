@@ -126,6 +126,25 @@
   background: #1c1c1c;
 }
 
+/* 拖拽分组 */
+.lut-link[draggable="true"] { cursor: grab; }
+.lut-link.dragging, .group-head.dragging { opacity: .4; }
+.lut-link.drop-before { box-shadow: inset 0 2px 0 #4aa3a3; }
+.lut-link.drop-after { box-shadow: inset 0 -2px 0 #4aa3a3; }
+.group-head.droppable { cursor: grab; }
+.group-head.drop-into, .new-group-zone.drop-into { color: #4aa3a3; }
+.group-head.drop-into { text-decoration: underline; }
+.group-head .g-del { color: #d16a5a; cursor: pointer; font-size: 11px; }
+.new-group-zone {
+  margin: 14px 10px;
+  padding: 10px;
+  border: 1px dashed #3a3a3a;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+}
+
 /* 右侧编辑区 */
 .editor-pane { flex: 1; padding: 20px 22px 60px; min-width: 0; }
 
