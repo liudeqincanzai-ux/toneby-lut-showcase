@@ -243,6 +243,24 @@
       return zone;
     }
 
+    // ＋ 增加 LUT：在当前选中的分组末尾新建一个 LUT 并进入编辑
+    function makeAddLutZone() {
+      var zone = document.createElement("div");
+      zone.className = "new-group-zone";
+      zone.textContent = "＋ 增加 LUT";
+      zone.style.cursor = "pointer";
+      zone.onclick = function () {
+        var gi = (cur.g >= 0) ? cur.g : DATA.length - 1;
+        var lut = { name: "新 LUT", title: "", desc: "", images: [], film: "", note: "", credits: [] };
+        DATA[gi].luts.push(lut);
+        cur = { g: gi, l: DATA[gi].luts.length - 1 };
+        saveQuiet(); renderList(); renderEditor();
+        listEl.scrollTop = listEl.scrollHeight;
+        toast("已添加 ✓ 双击左侧名称改名，右侧填写内容");
+      };
+      return zone;
+    }
+
     function renderList() {
       listEl.textContent = "";
       var siteLink = document.createElement("a");
@@ -263,6 +281,7 @@
         });
       });
       listEl.appendChild(makeNewGroupZone());
+      listEl.appendChild(makeAddLutZone());
     }
 
     // ---------- 编辑控件 ----------
