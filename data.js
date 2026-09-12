@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-09-12T05:17:39.609Z）
+// 本文件由内容编辑器同步生成（2026-09-12T15:01:15.717Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -419,6 +419,29 @@ const GROUPS = [
           "photos/Toneby-1789115996829-D65T-edited.jpg",
           "photos/Toneby-1789115966522-D65T-edited.jpg"
         ],
+        "film": "",
+        "note": "",
+        "credits": []
+      }
+    ]
+  },
+  {
+    "name": "E100T/N400T",
+    "luts": [
+      {
+        "name": "E100T",
+        "title": "",
+        "desc": "",
+        "images": [],
+        "film": "",
+        "note": "",
+        "credits": []
+      },
+      {
+        "name": "N400T",
+        "title": "",
+        "desc": "",
+        "images": [],
         "film": "",
         "note": "",
         "credits": []
