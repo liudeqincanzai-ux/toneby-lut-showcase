@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-09-12T15:01:15.717Z）
+// 本文件由内容编辑器同步生成（2026-09-12T15:09:50.981Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -10,6 +10,18 @@ const GROUPS = [
     "name": "GRF",
     "luts": [
       {
+        "name": "GRF",
+        "title": "GRF——理光负片风格",
+        "desc": "理光 GR 系列负片质感的调色方向。",
+        "images": [
+          "photos/Toneby-1789115890763-GRF-edited.jpg",
+          "photos/Toneby-1789115818379-GRF-edited.jpg"
+        ],
+        "film": "",
+        "note": "",
+        "credits": []
+      },
+      {
         "name": "GRFⅡ",
         "title": "GRFⅡ——理光负片第二代",
         "desc": "理光负片第二代配方，示例文案，可在编辑器里修改。",
@@ -20,18 +32,6 @@ const GROUPS = [
           "photos/Toneby-1789032991981-GRF_Ⅱ-edited.jpg",
           "photos/Toneby-1789033132573-GRF_Ⅱ-edited.jpg",
           "photos/Toneby-1789033317030-GRF_Ⅱ-edited.jpg"
-        ],
-        "film": "",
-        "note": "",
-        "credits": []
-      },
-      {
-        "name": "GRF",
-        "title": "GRF——理光负片风格",
-        "desc": "理光 GR 系列负片质感的调色方向。",
-        "images": [
-          "photos/Toneby-1789115890763-GRF-edited.jpg",
-          "photos/Toneby-1789115818379-GRF-edited.jpg"
         ],
         "film": "",
         "note": "",
@@ -134,19 +134,6 @@ const GROUPS = [
     "name": "CLASSIC FILM",
     "luts": [
       {
-        "name": "C200T",
-        "title": "Classic F200——富士经典 F250 风格",
-        "desc": "富士经典 F250 胶片风格，示例文案，可在编辑器里修改。",
-        "images": [
-          "covers/lut_icon_25.jpg",
-          "covers/lut_icon_26.jpg",
-          "covers/lut_icon_11.jpg"
-        ],
-        "film": "",
-        "note": "",
-        "credits": []
-      },
-      {
         "name": "C100T",
         "title": "CC——富士 CC 校色风格",
         "desc": "富士 CC 校色风格，示例文案，可在编辑器里修改。",
@@ -154,6 +141,19 @@ const GROUPS = [
           "covers/lut_icon_04.jpg",
           "covers/lut_icon_03.jpg",
           "covers/lut_icon_06.jpg"
+        ],
+        "film": "",
+        "note": "",
+        "credits": []
+      },
+      {
+        "name": "C200T",
+        "title": "Classic F200——富士经典 F250 风格",
+        "desc": "富士经典 F250 胶片风格，示例文案，可在编辑器里修改。",
+        "images": [
+          "covers/lut_icon_25.jpg",
+          "covers/lut_icon_26.jpg",
+          "covers/lut_icon_11.jpg"
         ],
         "film": "",
         "note": "",
