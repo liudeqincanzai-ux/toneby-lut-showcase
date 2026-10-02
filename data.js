@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-10-02T13:17:54.719Z）
+// 本文件由内容编辑器同步生成（2026-10-02T13:19:35.419Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -23,8 +23,8 @@ const GROUPS = [
       },
       {
         "name": "GRFⅡ",
-        "title": "GRFⅡ——理光负片第二代",
-        "desc": "理光负片第二代配方，示例文案，可在编辑器里修改。",
+        "title": "GRF II — Ricoh Second-Generation Negative Film",
+        "desc": "Ricoh negative film (2nd generation formula)—sample text that can be edited in the editor.",
         "images": [
           "photos/lutcam-1788856076571-edited.jpg",
           "photos/Toneby-1789032073631-GRF_Ⅱ-edited.jpg",
