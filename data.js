@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-10-03T05:52:43.467Z）
+// 本文件由内容编辑器同步生成（2026-10-03T06:10:10.544Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -19,11 +19,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "GRF —リコーネガティブフィルムスタイル",
-        "desc_ja": "ネガティブフィルムの美学を特徴とするリコーGRシリーズのカラーグレーディングスタイル。",
-        "title_zh": "GRF -理光负片风格",
-        "desc_zh": "理光GR系列的色彩分级风格，以底片美学为特征。"
+        "credits": []
       },
       {
         "name": "GRFⅡ",
@@ -39,11 +35,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "GRF II —リコー第二世代ネガフィルム",
-        "desc_ja": "Ricohネガフィルム（第2世代の数式） -エディタで編集できるサンプルテキスト。",
-        "title_zh": "GRF II -理光第二代负片",
-        "desc_zh": "理光负片（第二代配方）-可在编辑器中编辑的示例文本。"
+        "credits": []
       }
     ]
   },
@@ -64,9 +56,7 @@ const GROUPS = [
         ],
         "film": "胶片简介：示例胶片名 | 拍摄于示例地点",
         "note": "作者对这组照片的介绍：示例文字，不填时此行不显示。",
-        "credits": [],
-        "title_ja": "フィルムのような--经典日系胶片质感",
-        "desc_ja": "经典日系胶片发色，柔和的低反差与清新肤色 ，适合日常、人像与旅拍。示例文案 ，可在编辑器里修改。"
+        "credits": []
       },
       {
         "name": "FILM LIKE Ⅱ",
@@ -79,9 +69,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "フィルムLIKE Ⅱ ——更柔和的第二代配方",
-        "desc_ja": "在第一代基础上更柔和、更通透的第二代配方，示例文案 ，可在编辑器里修改。"
+        "credits": []
       },
       {
         "name": "FILM CLASSIC",
@@ -94,9 +82,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "クラシックフィルム--经典胶片风格",
-        "desc_ja": "厚重的经典胶片风格，示例文案 ，可在编辑器里修改。"
+        "credits": []
       }
     ]
   },
@@ -114,9 +100,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "仿胶卷——模拟胶片发色",
-        "desc_ja": "模拟传统胶片的发色与层次，示例文案 ，可在编辑器里修改。"
+        "credits": []
       },
       {
         "name": "仿胶卷 Ⅱ",
@@ -129,9 +113,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "えぇ仿胶卷--偏黄的暖调版本",
-        "desc_ja": "仿胶片的偏黄暖调版本，示例文案 ，可在编辑器里修改。"
+        "credits": []
       },
       {
         "name": "过期胶卷",
@@ -144,9 +126,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "过期胶卷——褪色与灰雾的岁月感",
-        "desc_ja": "模拟过期胶卷的褪色发灰、偏色与低饱和质感，适合想要时光感的街拍与人像。示例文案 ，可在编辑器里随意修改。"
+        "credits": []
       }
     ]
   },
@@ -164,9 +144,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "CC --富士 CC 校色风格",
-        "desc_ja": "富士 CC 校色风格，示例文案 ，可在编辑器里修改。"
+        "credits": []
       },
       {
         "name": "C200T",
@@ -179,9 +157,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "クラシックF 200 --富士经典 F 250 风格",
-        "desc_ja": "富士经典 F 250 胶片风格，示例文案 ，可在编辑器里修改。"
+        "credits": []
       }
     ]
   },
@@ -199,9 +175,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "ゴールド200 --金色 200 胶片色调",
-        "desc_ja": "金色 200 的暖调胶片发色，示例文案 ，可在编辑器里修改。"
+        "credits": []
       },
       {
         "name": "G200T Ⅱ",
@@ -213,9 +187,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "ゴールド200 H --高光加强版",
-        "desc_ja": "Gold 的高光加强版本200 ，示例文案 ，可在编辑器里修改。"
+        "credits": []
       }
     ]
   },
@@ -233,9 +205,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "クラシックフィーチャー--经典正片风格",
-        "desc_ja": "经典正片（反转片 ）风格 ，示例文案 ，可在编辑器里修改。"
+        "credits": []
       },
       {
         "name": "CLASSIC FILM",
@@ -248,9 +218,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "CLASSIC FILM （クラシックフィルム组二）",
-        "desc_ja": "与 クラシックフィルム相关的展示块，示例文案 ，可在编辑器里修改。"
+        "credits": []
       },
       {
         "name": "CLASSIC NEGATIVE",
@@ -263,9 +231,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "クラシックネガティブ--经典负片风格",
-        "desc_ja": "经典彩色负片风格，示例文案 ，可在编辑器里修改。"
+        "credits": []
       }
     ]
   },
@@ -281,9 +247,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "5219 --ビジョン柯达3 5219",
-        "desc_ja": "Vision 柯达 3 5219 电影胶片发色，示例文案 ，可在编辑器里修改。"
+        "credits": []
       },
       {
         "name": "5219T Ⅱ",
@@ -296,9 +260,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "5219 S --5219 柔和版",
-        "desc_ja": "5219 的柔和版本，示例文案 ，可在编辑器里修改。"
+        "credits": []
       }
     ]
   },
@@ -328,10 +290,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "5207 T",
-        "desc_ja": "5207 T 电影胶片发色，示例文案 ，可在编辑器里修改。",
-        "title_zh": "5207T"
+        "credits": []
       },
       {
         "name": "5207B",
@@ -342,9 +301,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "5207 B",
-        "title_zh": "小行星5207B"
+        "credits": []
       }
     ]
   },
@@ -362,9 +319,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "BWL --黑白 L",
-        "desc_ja": "黑白调色 L 版本，示例文案 ，可在编辑器里修改。"
+        "credits": []
       },
       {
         "name": "BWLL",
@@ -377,9 +332,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "BWLL --黑白 LL",
-        "desc_ja": "黑白调色 LL 版本，示例文案 ，可在编辑器里修改。"
+        "credits": []
       }
     ]
   },
@@ -397,9 +350,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "GS 灰度 S 800 -- S 800",
-        "desc_ja": "灰度 S 800 风格，示例文案 ，可在编辑器里修改。"
+        "credits": []
       },
       {
         "name": "GS 3T",
@@ -412,9 +363,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "GS 灰度 P 3 -- P 3",
-        "desc_ja": "灰度 P 3 风格，示例文案 ，可在编辑器里修改。"
+        "credits": []
       }
     ]
   },
@@ -440,9 +389,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "ムービー--电影感调色",
-        "desc_ja": "电影感的青橙调色方向，示例文案 ，可在编辑器里修改。"
+        "credits": []
       },
       {
         "name": "MOVIE Ⅱ",
@@ -455,9 +402,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "映画Ⅱ ——电影感第二代",
-        "desc_ja": "电影感第二代配方，示例文案 ，可在编辑器里修改。"
+        "credits": []
       }
     ]
   },
@@ -475,9 +420,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "D 55 --日光 5500 K",
-        "desc_ja": "日光 5500 K 色温基准的调色，示例文案 ，可在编辑器里修改。"
+        "credits": []
       },
       {
         "name": "D65T",
@@ -489,9 +432,7 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": [],
-        "title_ja": "D 65标准日光 --6500 K",
-        "desc_ja": "标准日光 6500 K 色温基准的调色，示例文案 ，可在编辑器里修改。"
+        "credits": []
       }
     ]
   },
@@ -515,6 +456,28 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": []
+      }
+    ]
+  },
+  {
+    "name": "新分组",
+    "luts": [
+      {
+        "name": "新 LUT",
+        "title": "",
+        "desc": "",
+        "images": [],
+        "film": "",
+        "note": "",
+        "credits": [],
+        "title_ja": "",
+        "desc_ja": "",
+        "film_ja": "",
+        "note_ja": "",
+        "title_zh": "",
+        "desc_zh": "",
+        "film_zh": "",
+        "note_zh": ""
       }
     ]
   }
