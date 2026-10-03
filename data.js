@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-10-03T13:16:35.303Z）
+// 本文件由内容编辑器同步生成（2026-10-03T13:21:20.986Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -282,19 +282,17 @@ const GROUPS = [
         "title": "5207T",
         "desc": "5207T 电影胶片发色，示例文案，可在编辑器里修改。",
         "images": [
-          "photos/lutcam-1788857796992-edited.jpg",
           "photos/lutcam-1788857800894-edited.jpg",
-          "photos/lutcam-1788857961450-edited.jpg",
           "photos/lutcam-1788857975333-edited.jpg",
           "photos/lutcam-1788857993335-edited.jpg",
+          "photos/lutcam-1788857796992-edited.jpg",
           "photos/lutcam-1788858008672-edited.jpg",
           "photos/lutcam-1788858026293-edited.jpg",
           "photos/Toneby-1789115524519-5207T-edited.jpg",
-          "photos/Toneby-1789115746190-5207T-edited.jpg",
           "photos/Toneby-1789116363328-5207T-edited.jpg",
+          "photos/Toneby-1789115746190-5207T-edited.jpg",
           "photos/Toneby-1789116426251-5207T-edited.jpg",
           "photos/Toneby-1789116386554-5207T-edited.jpg",
-          "photos/Toneby-1789116443694-5207T-edited.jpg",
           "photos/Toneby-1789116301401-5207T-edited.jpg",
           "photos/Toneby-1789116308198-5207T-edited.jpg"
         ],
