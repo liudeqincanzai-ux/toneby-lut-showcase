@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-10-03T07:01:17.359Z）
+// 本文件由内容编辑器同步生成（2026-10-03T07:09:34.213Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -27,8 +27,8 @@ const GROUPS = [
       },
       {
         "name": "GRFⅡ",
-        "title": "GRF II — Ricoh Second-Generation Negative Film",
-        "desc": "Ricoh negative film (2nd generation formula)—sample text that can be edited in the editor.",
+        "title": "GRF II — Ricoh's Second-Generation Negative Film",
+        "desc": "Ricoh Negative Film (Second Generation Formula) — a style preset more suited for everyday shooting.",
         "images": [
           "photos/lutcam-1788856076571-edited.jpg",
           "photos/Toneby-1789032073631-GRF_Ⅱ-edited.jpg",
@@ -39,7 +39,11 @@ const GROUPS = [
         ],
         "film": "",
         "note": "",
-        "credits": []
+        "credits": [],
+        "title_ja": "GRF II — Ricoh第2世代ネガ",
+        "title_zh": "GRF II — 理光第二代负片",
+        "desc_zh": "理光负片（第二代配方）——更加适合日常拍摄的风格预设。",
+        "desc_ja": "Ricohのネガ（第2世代フォーミュラ）——日常撮影にもっと合うスタイルプリセット。"
       }
     ]
   },
