@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-10-03T07:09:34.213Z）
+// 本文件由内容编辑器同步生成（2026-10-03T07:11:30.254Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -28,7 +28,7 @@ const GROUPS = [
       {
         "name": "GRFⅡ",
         "title": "GRF II — Ricoh's Second-Generation Negative Film",
-        "desc": "Ricoh Negative Film (Second Generation Formula) — a style preset more suited for everyday shooting.",
+        "desc": "The second generation of the Ricoh GR series' color grading style features a film-like aesthetic.",
         "images": [
           "photos/lutcam-1788856076571-edited.jpg",
           "photos/Toneby-1789032073631-GRF_Ⅱ-edited.jpg",
@@ -42,8 +42,8 @@ const GROUPS = [
         "credits": [],
         "title_ja": "GRF II — Ricoh第2世代ネガ",
         "title_zh": "GRF II — 理光第二代负片",
-        "desc_zh": "理光负片（第二代配方）——更加适合日常拍摄的风格预设。",
-        "desc_ja": "Ricohのネガ（第2世代フォーミュラ）——日常撮影にもっと合うスタイルプリセット。"
+        "desc_zh": "理光 GR 系列的调色风格第二代，以胶片美学为特色。",
+        "desc_ja": "Ricoh GRシリーズのカラーグレーディングスタイル第2世代で、フィルムの美学が特徴です。"
       }
     ]
   },
