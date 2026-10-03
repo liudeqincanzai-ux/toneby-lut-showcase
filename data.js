@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-10-03T13:07:43.298Z）
+// 本文件由内容编辑器同步生成（2026-10-03T13:16:35.303Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -35,7 +35,9 @@ const GROUPS = [
           "photos/Toneby-1789032908630-GRF_Ⅱ-edited.jpg",
           "photos/Toneby-1789032991981-GRF_Ⅱ-edited.jpg",
           "photos/Toneby-1789033132573-GRF_Ⅱ-edited.jpg",
-          "photos/Toneby-1789033317030-GRF_Ⅱ-edited.jpg"
+          "photos/Toneby-1789033317030-GRF_Ⅱ-edited.jpg",
+          "photos/Toneby-1791023482275.jpg",
+          "photos/Toneby-1791023528627.jpg"
         ],
         "film": "",
         "note": "",
@@ -305,7 +307,10 @@ const GROUPS = [
         "title": "5207B",
         "desc": "",
         "images": [
-          "photos/Toneby-1789115524519-5207T-edited.jpg"
+          "photos/Toneby-1791023449265.jpg",
+          "photos/Toneby-1791023539623.jpg",
+          "photos/Toneby-1791023446939.jpg",
+          "photos/Toneby-1791023478073.jpg"
         ],
         "film": "",
         "note": "",
