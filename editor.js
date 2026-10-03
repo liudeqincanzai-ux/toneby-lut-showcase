@@ -251,7 +251,7 @@
       zone.style.cursor = "pointer";
       zone.onclick = function () {
         var gi = (cur.g >= 0) ? cur.g : DATA.length - 1;
-        var lut = { name: "新 LUT", title: "", desc: "", images: [], film: "", note: "", credits: [] };
+        var lut = { name: "新 LUT", title: "", desc: "", images: [], film: "", note: "", credits: [], title_ja: "", desc_ja: "", film_ja: "", note_ja: "", title_zh: "", desc_zh: "", film_zh: "", note_zh: "" };
         DATA[gi].luts.push(lut);
         cur = { g: gi, l: DATA[gi].luts.length - 1 };
         saveQuiet(); renderList(); renderEditor();
@@ -305,6 +305,12 @@
       return wrap;
     }
 
+    // 日/中翻译输入行：key 为 "title"/"desc"/"film"/"note"，写入 lut[key+"_ja"] / lut[key+"_zh"]；留空则前台该语言回落英文
+    function appendLangFields(root, lut, key, rows) {
+      root.appendChild(field("└ 日本語", "留空则日文页回落英文", lut[key + "_ja"], function (v) { lut[key + "_ja"] = v; }, rows || 0));
+      root.appendChild(field("└ 中文", "留空则中文页回落英文", lut[key + "_zh"], function (v) { lut[key + "_zh"] = v; }, rows || 0));
+    }
+
     // ---------- 网站设置页 ----------
     function renderSiteEditor() {
       editorEl.textContent = "";
@@ -356,9 +362,13 @@
         renderList();
       }));
       editorEl.appendChild(field("标题介绍", "展示块顶部的大标题", lut.title, function (v) { lut.title = v; }, 2));
+      appendLangFields(editorEl, lut, "title", 2);
       editorEl.appendChild(field("文字描述", "标题下方的介绍文字", lut.desc, function (v) { lut.desc = v; }, 4));
+      appendLangFields(editorEl, lut, "desc", 4);
       editorEl.appendChild(field("使用的胶片", "显示在图片正下方居中；留空则不显示", lut.film, function (v) { lut.film = v; }));
+      appendLangFields(editorEl, lut, "film", 0);
       editorEl.appendChild(field("作者对这组照片的介绍", "胶片下一行居中；留空则不显示", lut.note, function (v) { lut.note = v; }, 2));
+      appendLangFields(editorEl, lut, "note", 2);
       editorEl.appendChild(field("补充信息行", "如「导演：xx」，一行一条；留空则不显示", (lut.credits || []).join("\n"), function (v) {
         lut.credits = v.split("\n").filter(function (s) { return s.trim(); });
       }, 3));
