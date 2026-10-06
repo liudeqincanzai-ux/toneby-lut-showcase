@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-10-06T07:05:37.644Z）
+// 本文件由内容编辑器同步生成（2026-10-06T07:11:28.857Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -97,7 +97,8 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": [],
-        "title_ja": "更新を頑張ってる"
+        "title_ja": "更新を頑張ってる",
+        "title_zh": "在努力更新中"
       },
       {
         "name": "仿胶卷 Ⅱ",
@@ -107,7 +108,8 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": [],
-        "title_ja": "更新を頑張ってる"
+        "title_ja": "更新を頑張ってる",
+        "title_zh": "在努力更新中"
       },
       {
         "name": "过期胶卷",
@@ -117,7 +119,8 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": [],
-        "title_ja": "更新を頑張ってる"
+        "title_ja": "更新を頑張ってる",
+        "title_zh": "在努力更新中"
       }
     ]
   },
@@ -132,7 +135,8 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": [],
-        "title_ja": "更新を頑張ってる"
+        "title_ja": "更新を頑張ってる",
+        "title_zh": "在努力更新中"
       },
       {
         "name": "C200T",
@@ -142,13 +146,31 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": [],
-        "title_ja": "更新を頑張ってる"
+        "title_ja": "更新を頑張ってる",
+        "title_zh": "在努力更新中"
       }
     ]
   },
   {
     "name": "G200T / G200T Ⅱ",
     "luts": [
+      {
+        "name": "G200s",
+        "title": "Working hard on updating",
+        "desc": "",
+        "images": [],
+        "film": "",
+        "note": "",
+        "credits": [],
+        "title_ja": "更新を頑張ってる",
+        "desc_ja": "",
+        "film_ja": "",
+        "note_ja": "",
+        "title_zh": "在努力更新中",
+        "desc_zh": "",
+        "film_zh": "",
+        "note_zh": ""
+      },
       {
         "name": "G200T",
         "title": "Working hard on updating",
@@ -157,7 +179,8 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": [],
-        "title_ja": "更新を頑張ってる"
+        "title_ja": "更新を頑張ってる",
+        "title_zh": "在努力更新中"
       },
       {
         "name": "G200T Ⅱ",
@@ -184,7 +207,8 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": [],
-        "title_ja": "更新を頑張ってる"
+        "title_ja": "更新を頑張ってる",
+        "title_zh": "在努力更新中"
       },
       {
         "name": "CLASSIC FILM",
@@ -194,7 +218,8 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": [],
-        "title_ja": "更新を頑張ってる"
+        "title_ja": "更新を頑張ってる",
+        "title_zh": "在努力更新中"
       },
       {
         "name": "CLASSIC NEGATIVE",
@@ -204,7 +229,8 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": [],
-        "title_ja": "更新を頑張ってる"
+        "title_ja": "更新を頑張ってる",
+        "title_zh": "在努力更新中"
       }
     ]
   },
@@ -219,7 +245,8 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": [],
-        "title_ja": "更新を頑張ってる"
+        "title_ja": "更新を頑張ってる",
+        "title_zh": "在努力更新中"
       },
       {
         "name": "5219T Ⅱ",
@@ -229,7 +256,8 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": [],
-        "title_ja": "更新を頑張ってる"
+        "title_ja": "更新を頑張ってる",
+        "title_zh": "在努力更新中"
       }
     ]
   },
@@ -283,7 +311,8 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": [],
-        "title_ja": "更新を頑張ってる"
+        "title_ja": "更新を頑張ってる",
+        "title_zh": "在努力更新中"
       },
       {
         "name": "BWLL",
@@ -293,7 +322,8 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": [],
-        "title_ja": "更新を頑張ってる"
+        "title_ja": "更新を頑張ってる",
+        "title_zh": "在努力更新中"
       }
     ]
   },
@@ -308,7 +338,8 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": [],
-        "title_ja": "更新を頑張ってる"
+        "title_ja": "更新を頑張ってる",
+        "title_zh": "在努力更新中"
       },
       {
         "name": "GS 3T",
@@ -318,7 +349,8 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": [],
-        "title_ja": "更新を頑張ってる"
+        "title_ja": "更新を頑張ってる",
+        "title_zh": "在努力更新中"
       }
     ]
   },
@@ -354,7 +386,8 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": [],
-        "title_ja": "更新を頑張ってる"
+        "title_ja": "更新を頑張ってる",
+        "title_zh": "在努力更新中"
       }
     ]
   },
@@ -369,7 +402,8 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": [],
-        "title_ja": "更新を頑張ってる"
+        "title_ja": "更新を頑張ってる",
+        "title_zh": "在努力更新中"
       },
       {
         "name": "D65T",
@@ -397,7 +431,8 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": [],
-        "title_ja": "更新を頑張ってる"
+        "title_ja": "更新を頑張ってる",
+        "title_zh": "在努力更新中"
       },
       {
         "name": "N400T",
@@ -407,26 +442,122 @@ const GROUPS = [
         "film": "",
         "note": "",
         "credits": [],
-        "title_ja": "更新を頑張ってる"
+        "title_ja": "更新を頑張ってる",
+        "title_zh": "在努力更新中"
       }
     ]
   },
   {
-    "name": "新分组",
+    "name": "K Series",
     "luts": [
       {
-        "name": "新 LUT",
-        "title": "",
+        "name": "K60",
+        "title": "Working hard on updating",
         "desc": "",
         "images": [],
         "film": "",
         "note": "",
         "credits": [],
-        "title_ja": "",
+        "title_ja": "更新を頑張ってる",
         "desc_ja": "",
         "film_ja": "",
         "note_ja": "",
-        "title_zh": "",
+        "title_zh": "在努力更新中",
+        "desc_zh": "",
+        "film_zh": "",
+        "note_zh": ""
+      },
+      {
+        "name": "K60s",
+        "title": "Working hard on updating",
+        "desc": "",
+        "images": [],
+        "film": "",
+        "note": "",
+        "credits": [],
+        "title_ja": "更新を頑張ってる",
+        "desc_ja": "",
+        "film_ja": "",
+        "note_ja": "",
+        "title_zh": "在努力更新中",
+        "desc_zh": "",
+        "film_zh": "",
+        "note_zh": ""
+      },
+      {
+        "name": "K80",
+        "title": "Working hard on updating",
+        "desc": "",
+        "images": [],
+        "film": "",
+        "note": "",
+        "credits": [],
+        "title_ja": "更新を頑張ってる",
+        "desc_ja": "",
+        "film_ja": "",
+        "note_ja": "",
+        "title_zh": "在努力更新中",
+        "desc_zh": "",
+        "film_zh": "",
+        "note_zh": ""
+      },
+      {
+        "name": "K80s",
+        "title": "Working hard on updating",
+        "desc": "",
+        "images": [],
+        "film": "",
+        "note": "",
+        "credits": [],
+        "title_ja": "更新を頑張ってる",
+        "desc_ja": "",
+        "film_ja": "",
+        "note_ja": "",
+        "title_zh": "在努力更新中",
+        "desc_zh": "",
+        "film_zh": "",
+        "note_zh": ""
+      }
+    ]
+  },
+  {
+    "name": "2383T",
+    "luts": [
+      {
+        "name": "2383T",
+        "title": "Working hard on updating",
+        "desc": "",
+        "images": [],
+        "film": "",
+        "note": "",
+        "credits": [],
+        "title_ja": "更新を頑張ってる",
+        "desc_ja": "",
+        "film_ja": "",
+        "note_ja": "",
+        "title_zh": "在努力更新中",
+        "desc_zh": "",
+        "film_zh": "",
+        "note_zh": ""
+      }
+    ]
+  },
+  {
+    "name": "5213T",
+    "luts": [
+      {
+        "name": "5213T",
+        "title": "Working hard on updating",
+        "desc": "",
+        "images": [],
+        "film": "",
+        "note": "",
+        "credits": [],
+        "title_ja": "更新を頑張ってる",
+        "desc_ja": "",
+        "film_ja": "",
+        "note_ja": "",
+        "title_zh": "在努力更新中",
         "desc_zh": "",
         "film_zh": "",
         "note_zh": ""
