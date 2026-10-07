@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-10-07T13:19:11.050Z）
+// 本文件由内容编辑器同步生成（2026-10-07T13:29:21.167Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -545,7 +545,8 @@ const GROUPS = [
           "photos/Toneby-1791365639732-K80s-edited.jpg",
           "photos/Toneby-1791365775814-K80s-edited.jpg",
           "photos/Toneby-1791364367733-K80s-edited.jpg",
-          "photos/Toneby-1791365412546-K80s-edited.jpg"
+          "photos/Toneby-1791365412546-K80s-edited.jpg",
+          "photos/Toneby-1791364338671-K80s-edited.jpg"
         ],
         "film": "",
         "note": "Some of the photos were taken with a phone using Fni cam.",
