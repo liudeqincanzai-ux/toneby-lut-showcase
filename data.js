@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-10-07T12:40:10.190Z）
+// 本文件由内容编辑器同步生成（2026-10-07T12:48:25.634Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -252,7 +252,9 @@ const GROUPS = [
         "name": "5219T Ⅱ",
         "title": "Working hard on updating",
         "desc": "",
-        "images": [],
+        "images": [
+          "photos/Toneby-1791361594492-5219T_Ⅱ-edited.jpg"
+        ],
         "film": "",
         "note": "",
         "credits": [],
@@ -327,7 +329,9 @@ const GROUPS = [
         "name": "BWLL",
         "title": "Working hard on updating",
         "desc": "",
-        "images": [],
+        "images": [
+          "photos/Toneby-1791362786795-BWLL-edited.jpg"
+        ],
         "film": "",
         "note": "",
         "credits": [],
@@ -430,24 +434,19 @@ const GROUPS = [
     ]
   },
   {
-    "name": "E100T/N400T",
+    "name": "E100T",
     "luts": [
       {
         "name": "E100T",
         "title": "Working hard on updating",
         "desc": "",
-        "images": [],
-        "film": "",
-        "note": "",
-        "credits": [],
-        "title_ja": "更新を頑張ってる",
-        "title_zh": "在努力更新中"
-      },
-      {
-        "name": "N400T",
-        "title": "Working hard on updating",
-        "desc": "",
-        "images": [],
+        "images": [
+          "photos/Toneby-1791362450883-E100T-edited.jpg",
+          "photos/Toneby-1791361897478-E100T-edited.jpg",
+          "photos/Toneby-1791361965288-E100T-edited.jpg",
+          "photos/Toneby-1791362388556-E100T-edited.jpg",
+          "photos/Toneby-1791362108067-E100T-edited.jpg"
+        ],
         "film": "",
         "note": "",
         "credits": [],
@@ -570,6 +569,22 @@ const GROUPS = [
         "desc_zh": "",
         "film_zh": "",
         "note_zh": ""
+      }
+    ]
+  },
+  {
+    "name": "N400T",
+    "luts": [
+      {
+        "name": "N400T",
+        "title": "Working hard on updating",
+        "desc": "",
+        "images": [],
+        "film": "",
+        "note": "",
+        "credits": [],
+        "title_ja": "更新を頑張ってる",
+        "title_zh": "在努力更新中"
       }
     ]
   }
