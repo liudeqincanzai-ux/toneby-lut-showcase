@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-10-07T12:57:56.189Z）
+// 本文件由内容编辑器同步生成（2026-10-07T12:59:35.650Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -104,7 +104,10 @@ const GROUPS = [
         "name": "仿胶卷 Ⅱ",
         "title": "Working hard on updating",
         "desc": "",
-        "images": [],
+        "images": [
+          "photos/Toneby-1791366988668-仿胶卷_Ⅱ-edited.jpg",
+          "photos/Toneby-1791362669753-仿胶卷_Ⅱ-edited.jpg"
+        ],
         "film": "",
         "note": "",
         "credits": [],
