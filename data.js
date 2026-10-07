@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-10-07T12:48:25.634Z）
+// 本文件由内容编辑器同步生成（2026-10-07T12:57:56.189Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -188,7 +188,9 @@ const GROUPS = [
         "desc": "Gold200 的高光加强版本，示例文案，可在编辑器里修改。",
         "images": [
           "photos/Toneby-1789116550880-G200T_Ⅱ-edited.jpg",
-          "photos/Toneby-1789116580648-G200T_Ⅱ-edited.jpg"
+          "photos/Toneby-1789116580648-G200T_Ⅱ-edited.jpg",
+          "photos/Toneby-1791361485411-G200T_Ⅱ-edited.jpg",
+          "photos/Toneby-1791361557060-G200T_Ⅱ-edited.jpg"
         ],
         "film": "",
         "note": "",
@@ -513,7 +515,18 @@ const GROUPS = [
         "name": "K80s",
         "title": "Working hard on updating",
         "desc": "",
-        "images": [],
+        "images": [
+          "photos/Toneby-1791365949603-K80s-edited.jpg",
+          "photos/Toneby-1791365854755-K80s-edited.jpg",
+          "photos/Toneby-1791365918831-K80s-edited.jpg",
+          "photos/Toneby-1791365923142-K80s-edited.jpg",
+          "photos/Toneby-1791365353614-K80s-edited.jpg",
+          "photos/Toneby-1791365293415-K80s-edited.jpg",
+          "photos/Toneby-1791365639732-K80s-edited.jpg",
+          "photos/Toneby-1791365775814-K80s-edited.jpg",
+          "photos/Toneby-1791364367733-K80s-edited.jpg",
+          "photos/Toneby-1791365412546-K80s-edited.jpg"
+        ],
         "film": "",
         "note": "",
         "credits": [],
