@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-10-07T13:17:54.230Z）
+// 本文件由内容编辑器同步生成（2026-10-07T13:19:11.050Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -18,12 +18,14 @@ const GROUPS = [
           "photos/Toneby-1789115818379-GRF-edited.jpg"
         ],
         "film": "",
-        "note": "",
+        "note": "Some of the photos were taken with a phone using Fni cam.",
         "credits": [],
         "title_zh": "GRF — 理光负片风格",
         "title_ja": "GRF — Ricoh・ネガフィルム調",
         "desc_zh": "理光 GR 系列的调色风格，以胶片美学为特色。",
-        "desc_ja": "ネガフィルムの質感を特徴とする、リコーGRシリーズのカラーグレーディング・スタイル。"
+        "desc_ja": "ネガフィルムの質感を特徴とする、リコーGRシリーズのカラーグレーディング・スタイル。",
+        "note_ja": "一部の写真はスマホでFni camを使って撮ったものです。",
+        "note_zh": "部分照片为手机使用Fni cam拍摄。"
       },
       {
         "name": "GRFⅡ",
