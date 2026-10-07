@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-10-07T13:11:22.067Z）
+// 本文件由内容编辑器同步生成（2026-10-07T13:17:54.230Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -39,12 +39,14 @@ const GROUPS = [
           "photos/Toneby-1791023482275.jpg"
         ],
         "film": "",
-        "note": "",
+        "note": "Some of the photos were taken with a phone using Fni cam.",
         "credits": [],
         "title_ja": "GRF II — Ricoh第2世代ネガ",
         "title_zh": "GRF II — 理光第二代负片",
         "desc_zh": "理光 GR 系列的调色风格第二代，以胶片美学为特色。",
-        "desc_ja": "Ricoh GRシリーズのカラーグレーディングスタイル第2世代で、フィルムの美学が特徴です。"
+        "desc_ja": "Ricoh GRシリーズのカラーグレーディングスタイル第2世代で、フィルムの美学が特徴です。",
+        "note_ja": "一部の写真はスマホでFni camを使って撮ったものです。",
+        "note_zh": "部分照片为手机使用Fni cam拍摄。"
       }
     ]
   },
@@ -157,7 +159,7 @@ const GROUPS = [
     ]
   },
   {
-    "name": "G200T / G200T Ⅱ",
+    "name": "G200",
     "luts": [
       {
         "name": "G200s",
@@ -244,7 +246,7 @@ const GROUPS = [
     ]
   },
   {
-    "name": "5219T / 5219T Ⅱ",
+    "name": "5219",
     "luts": [
       {
         "name": "5219T",
@@ -273,7 +275,7 @@ const GROUPS = [
     ]
   },
   {
-    "name": "5207T",
+    "name": "5207",
     "luts": [
       {
         "name": "5207T",
@@ -295,8 +297,10 @@ const GROUPS = [
           "photos/Toneby-1789116308198-5207T-edited.jpg"
         ],
         "film": "",
-        "note": "",
-        "credits": []
+        "note": "Some of the photos were taken with a phone using Fni cam.",
+        "credits": [],
+        "note_zh": "部分照片为手机使用Fni cam拍摄。",
+        "note_ja": "一部の写真はスマホでFni camを使って撮ったものです。"
       },
       {
         "name": "5207B",
@@ -315,13 +319,15 @@ const GROUPS = [
           "photos/Toneby-1791362983251-5207B-edited.jpg"
         ],
         "film": "",
-        "note": "",
-        "credits": []
+        "note": "Some of the photos were taken with a phone using Fni cam.",
+        "credits": [],
+        "note_ja": "一部の写真はスマホでFni camを使って撮ったものです。",
+        "note_zh": "部分照片为手机使用Fni cam拍摄。"
       }
     ]
   },
   {
-    "name": "BWL / BWLL",
+    "name": "BWL",
     "luts": [
       {
         "name": "BWL",
@@ -342,15 +348,17 @@ const GROUPS = [
           "photos/Toneby-1791362786795-BWLL-edited.jpg"
         ],
         "film": "",
-        "note": "",
+        "note": "Some of the photos were taken with a phone using Fni cam.",
         "credits": [],
         "title_ja": "更新を頑張ってる",
-        "title_zh": "在努力更新中"
+        "title_zh": "在努力更新中",
+        "note_ja": "一部の写真はスマホでFni camを使って撮ったものです。",
+        "note_zh": "部分照片为手机使用Fni cam拍摄。"
       }
     ]
   },
   {
-    "name": "GS800T / GS 3T",
+    "name": "GS",
     "luts": [
       {
         "name": "GS800T",
@@ -377,7 +385,7 @@ const GROUPS = [
     ]
   },
   {
-    "name": "MOVIE / MOVIEⅡ",
+    "name": "MOVIE",
     "luts": [
       {
         "name": "MOVIE",
@@ -391,14 +399,15 @@ const GROUPS = [
           "photos/Toneby-1789116627119-MOVIE-edited.jpg",
           "photos/Toneby-1789116801827-MOVIE-edited.jpg",
           "photos/Toneby-1789117629098-MOVIE-edited.jpg",
-          "photos/Toneby-1789117005686-MOVIE-edited.jpg",
           "photos/Toneby-1789116989247-MOVIE-edited.jpg",
           "photos/Toneby-1789116639430-MOVIE-edited.jpg",
           "photos/Toneby-1789116649743-MOVIE-edited.jpg"
         ],
         "film": "",
-        "note": "",
-        "credits": []
+        "note": "Some of the photos were taken with a phone using Fni cam.",
+        "credits": [],
+        "note_zh": "部分照片为手机使用Fni cam拍摄。",
+        "note_ja": "一部の写真はスマホでFni camを使って撮ったものです。"
       },
       {
         "name": "MOVIE Ⅱ",
@@ -457,10 +466,12 @@ const GROUPS = [
           "photos/Toneby-1791362108067-E100T-edited.jpg"
         ],
         "film": "",
-        "note": "",
+        "note": "Some of the photos were taken with a phone using Fni cam.",
         "credits": [],
         "title_ja": "更新を頑張ってる",
-        "title_zh": "在努力更新中"
+        "title_zh": "在努力更新中",
+        "note_zh": "部分照片为手机使用Fni cam拍摄。",
+        "note_ja": "一部の写真はスマホでFni camを使って撮ったものです。"
       }
     ]
   },
@@ -535,16 +546,16 @@ const GROUPS = [
           "photos/Toneby-1791365412546-K80s-edited.jpg"
         ],
         "film": "",
-        "note": "",
+        "note": "Some of the photos were taken with a phone using Fni cam.",
         "credits": [],
         "title_ja": "更新を頑張ってる",
         "desc_ja": "",
         "film_ja": "",
-        "note_ja": "",
+        "note_ja": "一部の写真はスマホでFni camを使って撮ったものです。",
         "title_zh": "在努力更新中",
         "desc_zh": "",
         "film_zh": "",
-        "note_zh": ""
+        "note_zh": "部分照片为手机使用Fni cam拍摄。"
       }
     ]
   },
