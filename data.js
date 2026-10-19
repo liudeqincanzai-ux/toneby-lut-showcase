@@ -1,4 +1,4 @@
-// 本文件由内容编辑器同步生成（2026-10-17T01:19:38.779Z）
+// 本文件由内容编辑器同步生成（2026-10-19T13:08:39.664Z）
 // 手动编辑请改下面的 SITE / GROUPS；图片文件需放在 photos/ 文件夹内。
 const SITE = {
   "title": "Toneby LUT Showcase",
@@ -254,12 +254,16 @@ const GROUPS = [
         "name": "5219T",
         "title": "Working hard on updating",
         "desc": "",
-        "images": [],
+        "images": [
+          "photos/Toneby-raw-1792396427306-5219T-edited.jpg"
+        ],
         "film": "",
-        "note": "",
+        "note": "Some of the photos were taken with a phone using Fni cam.",
         "credits": [],
         "title_ja": "更新を頑張ってる",
-        "title_zh": "在努力更新中"
+        "title_zh": "在努力更新中",
+        "note_ja": "一部の写真はスマホでFni camを使って撮ったものです。",
+        "note_zh": "部分照片为手机使用Fni cam拍摄。"
       },
       {
         "name": "5219T Ⅱ",
@@ -547,8 +551,6 @@ const GROUPS = [
         "title": "Working hard on updating",
         "desc": "",
         "images": [
-          "photos/Toneby-1791365949603-K80s-edited.jpg",
-          "photos/Toneby-1791365854755-K80s-edited.jpg",
           "photos/Toneby-1791365918831-K80s-edited.jpg",
           "photos/Toneby-1791365923142-K80s-edited.jpg",
           "photos/Toneby-1791365353614-K80s-edited.jpg",
@@ -559,7 +561,10 @@ const GROUPS = [
           "photos/Toneby-1791365412546-K80s-edited.jpg",
           "photos/Toneby-1791364338671-K80s-edited.jpg",
           "photos/Toneby-raw-1791624367685-K80-edited.jpg",
-          "photos/Toneby-raw-1791624445198-K80-edited.jpg"
+          "photos/Toneby-raw-1791624445198-K80-edited.jpg",
+          "photos/Toneby-raw-1792397220275-K80s-edited.jpg",
+          "photos/Toneby-raw-1792396480831-K80s-edited.jpg",
+          "photos/Toneby-raw-1792396408843-K80s-edited.jpg"
         ],
         "film": "",
         "note": "Some of the photos were taken with a phone using Fni cam.",
